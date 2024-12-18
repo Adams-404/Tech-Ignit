@@ -1,0 +1,1337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tech Ignit 2025 - Gombe State University</title>
+    <link rel="icon" type="image/svg+xml" href="images/footer-logo.svg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Agbalumo&family=Indie+Flower&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+
+    <style>
+        :root {
+            --primary: #F4B400;
+            --background: #000000;
+            --text: #FAF6F0;
+            --card-bg: #1A1A1A;
+            --accent: #4285F4;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI', Oxygen, Ubuntu, Cantarell, sans-serif;
+            background: var(--background);
+            color: var(--text);
+            line-height: 1.6;
+        }
+
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            padding: 1rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;
+            background: rgba(0, 0, 0, 0.8);
+            backdrop-filter: blur(10px);
+        }
+
+        .nav-brand {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .logo {
+            height: 40px;
+            width: 280px;
+        }
+
+        .location-tag {
+            padding: 0.25rem 1rem;
+            border-radius: 999px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            font-size: 0.875rem;
+        }
+
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            gap: 6px;
+            cursor: pointer;
+            z-index: 1001;
+        }
+
+        .hamburger span {
+            display: block;
+            width: 30px;
+            height: 2px;
+            background: var(--text);
+            transition: all 0.3s ease-in-out;
+        }
+
+        .hamburger.active span:nth-child(1) {
+            transform: rotate(45deg) translate(8px, 8px);
+        }
+
+        .hamburger.active span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .hamburger.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(7px, -7px);
+        }
+
+        .nav-menu {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+        }
+
+        .nav-menu a {
+            color: var(--text);
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: opacity 0.2s;
+        }
+
+        .nav-menu a:hover {
+            opacity: 0.8;
+        }
+
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 2rem;
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+            url('images/Group.jpg') center/cover;
+
+        }
+
+        .presents-tag {
+            background: var(--text);
+            color: var(--background);
+            padding: 0.5rem 1.5rem;
+            border-radius: 999px;
+            font-size: 0.875rem;
+            margin-bottom: 2rem;
+        }
+
+        h1 {
+            font-size: 5rem;
+            font-weight: 800;
+            line-height: 1.1;
+            margin-bottom: 2rem;
+        }
+
+        .cta-button {
+            background: var(--primary);
+            color: var(--background);
+            border: none;
+            padding: 1rem 2rem;
+            border-radius: 999px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+
+        .cta-button:hover {
+            transform: scale(1.05);
+        }
+
+        .event-details {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            margin-top: 4rem;
+            max-width: 900px;
+            width: 100%;
+        }
+
+        .detail {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .icon {
+            font-size: 2rem;
+        }
+
+        .text {
+            text-align: left;
+        }
+
+        .text small {
+            opacity: 0.8;
+            font-size: 0.875rem;
+        }
+
+
+.schedule {
+    padding: 4rem 2rem;
+    background: #FDF5E6;
+    color: var(--background);
+}
+
+.schedule-item {
+    position: relative;
+    padding-left: 120px;
+    margin-bottom: 3rem;
+    padding-bottom: 2rem;
+}
+
+/* Vertical line - now black */
+.schedule-item::before {
+    content: '';
+    position: absolute;
+    left: 100px;
+    top: 0;
+    bottom: -20px;
+    width: 2px;
+    background: #000000;
+}
+
+
+
+/* Time circle */
+.time {
+    position: absolute;
+    left: 0;
+    font-weight: bold;
+    background: white;
+    padding: 0.5rem;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    width: 85px;
+    text-align: center;
+    font-size: 0.9rem;
+}
+
+.room-tag {
+    display: inline-block;
+    padding: 0.25rem 1rem;
+    background: #000000;
+    color: white;
+    border-radius: 20px;
+    font-size: 0.875rem;
+    margin-bottom: 1rem;
+}
+
+.content {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.content h3 {
+    margin: 0 0 0.5rem 0;
+    font-size: 1.25rem;
+}
+
+/* Speaker name now matches website gold color */
+.speaker {
+    color: #F4B400;
+    font-weight: 500;
+    margin: 0.5rem 0;
+}
+
+.description {
+    color: #666;
+    font-size: 0.9rem;
+    margin: 0;
+}
+
+.day-selector {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 3rem;
+}
+
+.day-selector button {
+    padding: 0.75rem 1.5rem;
+    border-radius: 999px;
+    border: 1px solid #000;
+    background: transparent;
+    color: #000;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.day-selector button.active {
+    background: #F4B400;
+    border-color: #F4B400;
+    color: black;
+}
+
+/* Updated mobile styles */
+@media (max-width: 768px) {
+    .schedule-item {
+        padding-left: 85px;
+        margin-top: 2rem;
+    }
+    
+    .schedule-item::before {
+        left: 70px;
+    }
+    
+    .time {
+        width: 60px;
+        font-size: 0.75rem;
+        padding: 0.25rem;
+        left: 0;
+        top: -1.5rem; /* Move time above content */
+    }
+
+    .room-tag {
+        margin-left: 0;
+        margin-top: 0.5rem;
+    }
+
+    .day-selector {
+        margin: 2rem 0;
+        flex-wrap: wrap; /* Allow buttons to wrap on mobile */
+    }
+
+    .day-selector button {
+        font-size: 0.9rem;
+        padding: 0.5rem 1rem;
+        width: auto; /* Allow buttons to size naturally */
+    }
+}
+
+        .schedule h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+
+        .schedule p {
+            text-align: center;
+            max-width: 600px;
+            margin: 0 auto 2rem;
+        }
+
+        .day-selector {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .day-selector button {
+            padding: 0.75rem 1.5rem;
+            border-radius: 999px;
+            border: 1px solid var(--background);
+            background: transparent;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .day-selector button.active {
+            background: var(--primary);
+            border-color: var(--primary);
+        }
+
+        .timeline {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .view-schedule {
+            display: block;
+            margin: 2rem auto;
+            background: var(--primary);
+            border: none;
+            padding: 1rem 2rem;
+            border-radius: 999px;
+            font-weight: 600;
+            cursor: pointer;
+        }
+
+        .card-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            padding: 4rem 2rem;
+        }
+
+        .card {
+            background: var(--card-bg);
+            border-radius: 10px;
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+        }
+
+        .card-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .card-content {
+            padding: 1.5rem;
+        }
+
+        .card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .card p {
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+        
+        
+   .sponsors {
+    padding: 4rem 2rem;
+    background: #000000;
+    color: var(--text);
+    position: relative;
+    overflow: hidden;
+}
+
+.sponsors::before {
+    content: '';
+    position: absolute;
+    width: 800px;
+    height: 800px;
+    background: radial-gradient(circle, rgba(244,180,0,0.1) 0%, rgba(0,0,0,0) 70%);
+    top: -400px;
+    right: -400px;
+    border-radius: 50%;
+}
+
+.sponsors h2 {
+    color: #F4B400;
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.sponsors p {
+    max-width: 600px;
+    margin-bottom: 3rem;
+    line-height: 1.6;
+}
+
+.sponsor-scroll-container {
+    overflow: hidden;
+    margin: 2rem 0;
+}
+
+.sponsor-scroll {
+    display: flex;
+    animation: scroll 15s linear infinite;
+    width: fit-content;
+}
+
+.sponsor-logo {
+    flex: 0 0 auto;
+    background: white;
+    border-radius: 12px;
+    padding: 1rem;
+    margin-right: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 200px;
+    height: 100px;
+}
+
+.sponsor-logo img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+}
+
+@keyframes scroll {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+.action-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: white;
+    color: black;
+    padding: 0.75rem 1.5rem;
+    border-radius: 999px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: transform 0.2s;
+}
+
+.action-button:hover {
+    transform: translateX(4px);
+}
+
+@media (max-width: 768px) {
+    .sponsors h2 {
+        font-size: 2rem;
+    }
+
+    .sponsor-logo {
+        width: 150px;
+        height: 75px;
+        padding: 0.75rem;
+    }
+}
+       .partners {
+    padding: 4rem 2rem;
+    background-image: url('./images/partner.jpg');
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    color: white;
+}
+
+.partners::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 1;
+}
+
+.partners-content {
+    position: relative;
+    z-index: 2;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.partners h2 {
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+.partners p {
+    text-align: center;
+    max-width: 600px;
+    margin: 0 auto 3rem;
+    line-height: 1.6;
+}
+
+.partner-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+    margin-bottom: 3rem;
+}
+
+.partner-logo {
+    background: white;
+    border-radius: 12px;
+    padding: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    aspect-ratio: 16/9;
+}
+
+.partner-logo img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.action-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: #F4B400;
+    color: black;
+    padding: 0.75rem 1.5rem;
+    border-radius: 999px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: transform 0.2s;
+    margin: 0 auto;
+    display: block;
+    width: fit-content;
+}
+
+.action-button:hover {
+    transform: translateX(4px);
+}
+
+@media (min-width: 768px) {
+    .partner-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+        
+        /* Topics Section */
+.topics {
+    padding: 4rem 2rem;
+    text-align: center;
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('images/GDG-Backround-ChapterBanner.jpeg') center/cover;
+    color: var(--text);
+}
+
+.topics h2 {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+}
+
+.topic-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+}
+
+.topic-card {
+        padding: 1.5rem; /* Reduced padding */
+        font-family: 'Agbalumo', sans-serif; /* Updated font */
+        font-size: 1rem; /* Adjusted font size */
+        text-align: center;
+        border-radius: 60px;
+        background: repeating-radial-gradient(circle, #000, #000 5px, transparent 6px);
+        background-size: 30px 30px;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+
+.topic-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+}
+
+.topic-card h3 {
+    margin-bottom: 0.2rem; /* Small space between text and icon */
+    font-size: 1.5rem;
+}
+
+.topic-card .icon {
+    width: 120px;
+}
+
+
+
+/* Core Team Section */
+.core-team {
+    padding: 4rem 2rem;
+    text-align: center;
+    background: white;
+    background-size: 20px 20px;
+    color: var(--text);
+    color: black;
+}
+
+.core-team h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.team-banner {
+    width: 30%;
+    max-width: 800px;
+    height: auto;
+    margin: 1.5rem auto;
+    border-radius: 10px;
+}
+
+.team-description {
+    font-size: 1.2rem;
+    max-width: 700px;
+    margin: 1rem auto 3rem;
+    line-height: 1.8;
+    opacity: 0.8;
+}
+
+.team-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+    justify-items: center;
+}
+
+.team-member {
+    text-align: center;
+}
+
+.team-photo {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 1rem;
+    border: 4px solid var(--primary);
+}
+
+.team-member h3 {
+    font-size: 1.5rem;
+    margin: 0.5rem 0;
+}
+
+.team-member p {
+    font-size: 1rem;
+    color: var(--accent);
+}
+
+
+        @media (max-width: 768px) {
+            .hamburger {
+                display: flex;
+            }
+
+            .nav-menu {
+                position: fixed;
+                top: 0;
+                right: -100%;
+                height: 100vh;
+                width: 100%;
+                background: var(--background);
+                flex-direction: column;
+                justify-content: center;
+                transition: right 0.3s ease-in-out;
+            }
+
+            .nav-menu.active {
+                right: 0;
+            }
+            
+            .logo {
+                width: 160px;
+            }
+
+            h1 {
+                font-size: 3rem;
+            }
+
+            .event-details {
+                grid-template-columns: 1fr;
+            }
+            
+            .team-banner {
+                width: 80%
+            }
+        }
+        
+         /* CSS styles for the footer */
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+        .footer {
+            background-color: #000;
+            color: #fff;
+            padding: 3rem 1rem;
+        }
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .about-section {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        .about-button {
+            background-color: transparent;
+            border: 1px solid #fff;
+            color: #fff;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .about-button:hover {
+            background-color: #333;
+        }
+        .about-text {
+            max-width: 800px;
+            margin: 1rem auto;
+            line-height: 1.6;
+        }
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+        .footer-column h3 {
+            color: #ccc;
+            margin-bottom: 1rem;
+        }
+        .footer-column a {
+            color: #fff;
+            text-decoration: none;
+            display: block;
+            margin-bottom: 0.5rem;
+            transition: color 0.3s;
+        }
+        .footer-column a:hover {
+            color: #F4B400;
+        }
+        .social-icons {
+            display: flex;
+            gap: 1rem;
+        }
+        .social-icons a {
+            color: #fff;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            border: 2px solid #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+
+        .social-icons a:hover {
+            color: #F4B400; 
+            border-color: #F4B400; 
+            background-color: transparent;
+        }
+
+        .logo-section {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+        .logo-image {
+            width: 230px;
+            height: 300px;
+        }
+        .event-title {
+                font-size: 10.5rem;
+                font-family: 'Agbalumo', sans-serif; font-weight: bold;"
+            }
+        @media (max-width: 768px) {
+            .footer-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+            .event-title {
+                font-size: 1.5rem;
+            }
+            .logo-image {
+            width: 100px;
+            height: auto;
+        }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="nav-brand">
+            <img src="images/logo_dark_MvY7VhA.svg" alt="Tech Ignit Logo" class="logo">
+            <span class="location-tag">Gombe</span>
+        </div>
+        
+        <div class="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+
+        <div class="nav-menu">
+            <a href="#speakers">Events</a>
+            <a href="#schedule">Schedule</a>
+            <a href="#workshops">Workshops</a>
+            <a href="#sponsors">Sponsors</a>
+            <a href="https://gdg.community.dev/events/details/google-gdg-on-campus-gombe-state-university-gombe-nigeria-presents-tech-ignite/" target="_blank">
+  <button class="cta-button">Get Tickets</button>
+</a>
+
+        </div>
+    </nav>
+
+    <main>
+        <section class="hero">
+            <!-- Replace the previous section with this button -->
+<h1 class="animated-title">GDG GSU presents...</h1>
+
+
+            <h1>
+        <span style="color: red; font-family: 'Agbalumo', sans-serif; font-weight: bold;">Tech</span>
+        <span style="color: blue; font-family: 'Agbalumo', sans-serif; font-weight: bold;">Ignit</span>
+        <span style="color: green; font-family: 'Indie Flower', sans-serif; font-weight: bold;">20</span>
+        <span style="color: yellow; font-family: 'Indie Flower', sans-serif; font-weight: bold;">25</span>
+    </h1>
+
+            <a href="https://gdg.community.dev/events/details/google-gdg-on-campus-gombe-state-university-gombe-nigeria-presents-tech-ignite/" target="_blank">
+  <button class="cta-button">Get Tickets</button>
+</a>
+
+            
+            <div class="event-details">
+                <div class="detail">
+    <div class="icon"><i class="fas fa-map-marker-alt"></i></div>
+    <div class="text">
+        <strong>Where: </strong>
+        <p>Gombe State University, NMH</p>
+    </div>
+</div>
+
+                <div class="detail">
+    <div class="icon"><i class="fas fa-calendar-alt" style="color: red;"></i></div>
+    <div class="text">
+        <strong>When</strong>
+        <p>12th January, 2025</p>
+    </div>
+</div>
+
+<!-- Google Material Icons Example -->
+<div class="detail">
+    <div class="icon"><span class="material-icons" style="color: green;">public</span></div>
+    <div class="text">
+        <strong>Who</strong>
+        <p>Everyone passionate.</p>
+    </div>
+</div>
+
+            </div>
+        </section>
+
+        <section class="schedule" id="schedule">
+            <h2>Igniting Minds, Fueling Innovation</h2>
+            <p>At Tech Ignit 2025, we're bringing together the brightest minds and latest technologies. Immerse yourself in cutting-edge talks, hands-on workshops, and networking opportunities that will shape the future of tech.</p>
+          
+            <div class="day-selector">
+                <button class="active">Tech Ignit Agenda</button>
+                
+            </div>
+              
+
+            <div class="timeline">
+                <!-- Schedule items will be populated by JavaScript -->
+            </div>
+
+            <button class="view-schedule">View Full Schedule</button>
+        </section>
+        
+        
+<section class="topics" id="workshops">
+    <h2>We Have Prepared a Wide Range of Topics for You</h2>
+    <div class="topic-grid">
+        
+        <div class="topic-card">
+            <h3>Mobile Development</h3>
+            <img src="images/lightening.svg" alt="Lightening Icon" class="icon">
+        </div>
+        <div class="topic-card">
+            <h3>Cloud Computing</h3>
+            <img src="images/lightening.svg" alt="Lightening Icon" class="icon">
+        </div>
+        <div class="topic-card">
+            <h3>Blockchain</h3>
+            <img src="images/lightening.svg" alt="Lightening Icon" class="icon">
+        </div>
+        
+        <div class="topic-card">
+            <h3>AI and ML</h3>
+            <img src="images/lightening.svg" alt="Lightening Icon" class="icon">
+        </div>
+        <div class="topic-card">
+            <h3>Mobile Development</h3>
+            <img src="images/lightening.svg" alt="Lightening Icon" class="icon">
+        </div>
+        <div class="topic-card">
+            <h3>Web Development</h3>
+            <img src="images/lightening.svg" alt="Lightening Icon" class="icon">
+        </div>
+        <div class="topic-card">
+            <h3>UI/UX Design</h3>
+            <img src="images/lightening.svg" alt="Lightening Icon" class="icon">
+        </div>
+        <div class="topic-card">
+            <h3>Data Science</h3>
+            <img src="images/lightening.svg" alt="Lightening Icon" class="icon">
+        </div>
+        <div class="topic-card">
+            <h3>DevOps</h3>
+            <img src="images/lightening.svg" alt="Lightening Icon" class="icon">
+        </div>
+    </div>
+</section>
+
+<section class="core-team" id="core-team">
+    <h2>Meet the Core Team</h2>
+    <img src="images/core_team.jpg" alt="Core Team Banner" class="team-banner">
+    <p class="team-description">
+        Our core team is composed of passionate and dedicated individuals committed to driving innovation, fostering collaboration, and creating impactful tech solutions.
+    </p>
+
+    
+    <div class="team-member">
+            <img src="images/team/lead.png" alt="Member 7" class="team-photo">
+            <h3>Muhammad Muhammad Tukur</h3>
+            <p>Lead</p>
+        </div>
+        <br><br>
+    <div class="team-grid">
+        <div class="team-member">
+            <img src="images/team/Adamu%20Muhammad%20Muhammad.jpg" alt="Member 1" class="team-photo">
+            <h3>Adamu Muhammad Muhammad</h3>
+            <p>Technical Lead</p>
+        </div>
+
+        <div class="team-member">
+            <img src="images/team/ABDULLAHI_MUHAMMAD_LAWAN_GDG24.JPG" alt="Member 2" class="team-photo">
+            <h3>Abdullahi Muhammad Lawan</h3>
+            <p>Designs</p>
+        </div>
+
+        <div class="team-member">
+            <img src="images/team/Salma%20Gazali.jpg" alt="Member 3" class="team-photo">
+            <h3>Salma Gazali</h3>
+            <p>Content Manager</p>
+        </div>
+
+        <div class="team-member">
+            <img src="images/team/Muhammad-Adamu.png" alt="Member 4" class="team-photo">
+            <h3>Muhammad Aliyu Adamu</h3>
+            <p>Community Manager</p>
+        </div>
+
+        <div class="team-member">
+            <img src="images/team/Fatima%20Zariyatu%20.jpg" alt="Member 5" class="team-photo">
+            <h3>Fatima Zariyatu Aminu</h3>
+            <p>Development Lead</p>
+        </div>
+
+        <div class="team-member">
+            <img src="images/team/FATIMA_USMAN_HASSAN_GDG2024.jpg" alt="Member 6" class="team-photo">
+            <h3>Fatima Usman Hassan</h3>
+            <p>Event Manager</p>
+        </div>
+
+        
+    </div>
+</section>
+
+<section class="sponsors" id="sponsors">
+    <h2>Our Sponsors</h2>
+    <p>Our sponsors are vital to the success of this event. Their support fuels our mission and enhances the overall experience. We invite you to become a sponsor, demonstrating your dedication to innovation and community while making a significant impact.</p>
+    
+   <div class="sponsor-scroll-container">
+        <div class="sponsor-scroll">
+            <div class="sponsor-logo">
+                <img src="images/3mtt1.jpeg" alt="3MTT Logo">
+            </div>
+            <div class="sponsor-logo">
+                <img src="images/cleva-black.png" alt="Cleva Logo">
+            </div>
+            <div class="sponsor-logo">
+                <img src="images/paystack.png" alt="Paystack Logo">
+            </div>
+            <div class="sponsor-logo">
+                <img src="images/the-unscholed.png" alt="The Unscholed Logo">
+            </div>
+            <div class="sponsor-logo">
+                <img src="images/Moniepoint-Logo.svg" alt="Moniepoint Logo">
+            </div>
+            <div class="sponsor-logo">
+                <img src="images/logo-flexisaf-Nigeria-450x450-2024.webp" alt="FlexiSAF Logo">
+            </div>
+            <div class="sponsor-logo">
+                <img src="images/solana.jpeg" alt="Solana Logo">
+            </div>
+            <div class="sponsor-logo">
+                <img src="images/nitda.png" alt="NITDA Logo">
+            </div>
+            <div class="sponsor-logo">
+                <img src="images/TC_LOGO_BLACK.png" alt="TC Logo">
+            </div>
+        </div>
+    </div>
+
+    <a href="#" class="action-button">
+        Sponsor us
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M5 12h14M12 5l7 7-7 7"/>
+        </svg>
+    </a>
+</section>
+
+<section class="partners" id="partners">
+        <div class="partners-content">
+            <h2>Partners</h2>
+            <p>Our incredible partners are helping to make this event extraordinary. Join us in creating a memorable experience for everyone by becoming a partner.</p>
+            
+            <div class="partner-grid">
+                <div class="partner-logo">
+                    <img src="images/geekinks.png" alt="Geekinks">
+                </div>
+                <div class="partner-logo">
+                    <img src="images/gdglagos.jpeg" alt="GDG Lagos">
+                </div>
+                <div class="partner-logo">
+                    <img src="images/Pantami-4a067ed5fdde7518845ecbc996e1338f.jpg" alt="Pantami">
+                </div>
+                <div class="partner-logo">
+                    <img src="images/newlog.png" alt="Future Partner">
+                </div>
+            </div>
+    
+    <a href="#" class="action-button">
+        Partner with us
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M5 12h14M12 5l7 7-7 7"/>
+        </svg>
+    </a>
+            </div>
+</section>
+
+        <section class="card-container" id="speakers">
+            <div class="card">
+                <img src="images/devfest.png" alt="Event 1" class="card-image">
+                <div class="card-content">
+                    <h3>DevFest GSU</h3>
+                    <p>Coming Soon...</p>
+                </div>
+            </div>
+            <div class="card">
+                <img src="images/Cloud.jpg" alt="Event 2" class="card-image">
+                <div class="card-content">
+                    <h3>Passed Event: The Info Session</h3>
+                    <p>Info session</p>
+                </div>
+            </div>
+            <div class="card">
+                <img src="images/vision.jpg" alt="Event 3" class="card-image">
+                <div class="card-content">
+                    <h3>Our Vision:</h3>
+                    <p>Our vision at GDG GSU is to ignite a passion and leadership in community!</p>
+                </div>
+            </div>
+        </section>
+
+    <!--    <section class="card-container" id="workshops">
+            <div class="card">
+                <img src="https://source.unsplash.com/random/400x200?workshop" alt="Workshop 1" class="card-image">
+                <div class="card-content">
+                    <h3>Building Scalable Web Apps</h3>
+                    <p>Learn best practices for creating web applications that can handle millions of users.</p>
+                </div>
+            </div>
+            <div class="card">
+                <img src="https://source.unsplash.com/random/400x200?coding" alt="Workshop 2" class="card-image">
+                <div class="card-content">
+                    <h3>Machine Learning Fundamentals</h3>
+                    <p>Get hands-on experience with popular ML algorithms and frameworks.</p>
+                </div>
+            </div>
+            <div class="card">
+                <img src="https://source.unsplash.com/random/400x200?robot" alt="Workshop 3" class="card-image">
+                <div class="card-content">
+                    <h3>IoT Prototyping</h3>
+                    <p>Design and build your own Internet of Things device in this interactive session.</p>
+                </div>
+            </div>
+        </section>  -->
+        
+        <footer class="footer">
+        <div class="footer-container">
+            <div class="about-section">
+                <button class="about-button" id="aboutButton">About Tech Ignit 2025</button>
+                <p class="about-text" id="aboutText" style="display: none;">
+                    Tech Ignit is an annual conference for tech enthusiasts from novices to industry leaders organized by the Google Developer Group Gombe (GDG Gombe). The event features sessions on various topics, including AI/ML, Mobile Development, Design, Web Development, Cloud Computing, DevOps, Cybersecurity, and more.
+                </p>
+            </div>
+            <div class="footer-grid">
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <a href="#schedule">Schedule</a>
+                    <a href="#speakers">Events</a>
+                    <a href="#faq">FAQs</a>
+                    <a href="#generator">DP Generator</a>
+                </div>
+                <div class="footer-column">
+                    <h3>Event Info</h3>
+                    <a href="https://maps.app.goo.gl/TNme98P8knEo5mbj6" target="_blank" aria-label="Venue Information">Venue Information</a>
+
+                    <a href="#tickets">View Ticket</a>
+                    <a href="#trivia">Play Trivia</a>
+                    <a href="#community">Join the Community</a>
+                </div>
+                <div class="footer-column">
+                    <h3>Follow Us</h3>
+                    <div class="social-icons">
+                        <a href="https://x.com/gdgocgsu" aria-label="Twitter" target="_blank">
+                            <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+                            </svg>
+                        </a>
+                        <a href="https://www.instagram.com/gdgoc_gsu/" aria-label="Instagram" target="_blank">
+                            <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                            </svg>
+                        </a>
+                        <a href="https://www.linkedin.com/company/gdsc-gombe-state-university/" aria-label="LinkedIn" target="_blank">
+  <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
+    <path d="M4.98 3.5C4.98 4.88 3.88 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1 4.98 2.12 4.98 3.5zM0 8h5V24H0V8zm8 0h4.64v2.164h.064c.647-1.222 2.229-2.514 4.586-2.514 4.907 0 5.713 3.228 5.713 7.426V24H18V15.436c0-2.039-.036-4.666-2.84-4.666-2.852 0-3.288 2.22-3.288 4.512V24h-5V8z"/>
+  </svg>
+</a>
+
+                    </div>
+                    <a href="#contact">Contact Us</a>
+                    <a href="#privacy">Privacy Policy</a>
+                </div>
+                <div class="footer-column">
+                    <h3>Additional Info</h3>
+                    <a href="#guidelines">Community Guidelines</a>
+                    <a href="#code">Code of Conduct</a>
+                </div>
+            </div>
+            <div class="logo-section">
+                <img src="images/footer-logo.svg" alt="Tech Ignit Logo" class="logo-image">
+                <div class="event-title">Tech Ignit 2025</div>
+            </div>
+        </div>
+    </footer>
+    </main>
+
+    <script>
+        // Hamburger Menu Animation
+        const hamburger = document.querySelector('.hamburger');
+        const navMenu = document.querySelector('.nav-menu');
+
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('active');
+            navMenu.classList.toggle('active');
+        });
+
+        // Close menu when clicking a link
+        document.querySelectorAll('.nav-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                hamburger.classList.remove('active');
+                navMenu.classList.remove('active');
+            });
+        });
+
+        // Sample schedule data
+        const scheduleData = [
+            {
+                time: '9:00 AM - 10:00 AM',
+                room: 'Keynote Speeches',
+                speaker: 'Dr.....',
+                title: 'AI Ethics and Its Impact on Society',
+                description: 'Exploring the ethical implications of AI and how it shapes our future.'
+            },
+            {
+                time: '10:15 AM - 11:15 AM',
+                room: 'Keynote Speeches',
+                speaker: 'Prof....',
+                title: 'Blockchain Revolution in African Economies',
+                description: 'Discover how blockchain technology is transforming financial systems across Africa.'
+            },
+            {
+                time: '11:30 AM - 12:30 PM',
+                room: 'Lunch Break',
+                speaker: 'Lunch Break & Networking',
+                title: 'Connect with people around',
+                description: ''
+            },
+        ];
+// JavaScript for the About button functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const aboutButton = document.getElementById('aboutButton');
+            const aboutText = document.getElementById('aboutText');
+
+            aboutButton.addEventListener('click', function() {
+                if (aboutText.style.display === 'none') {
+                    aboutText.style.display = 'block';
+                    aboutButton.textContent = 'Hide About';
+                } else {
+                    aboutText.style.display = 'none';
+                    aboutButton.textContent = 'About Tech Ignit 2025';
+                }
+            });
+        });
+        // Populate schedule
+        function populateSchedule() {
+            const timeline = document.querySelector('.timeline');
+            timeline.innerHTML = scheduleData.map(item => `
+                <div class="schedule-item">
+                    <div class="time">${item.time}</div>
+                    <div class="room-tag">${item.room}</div>
+                    <div class="content">
+                        <h3>${item.title}</h3>
+                        <p class="speaker">${item.speaker}</p>
+                        <p class="description">${item.description}</p>
+                    </div>
+                </div>
+            `).join('');
+        }
+        
+       document.addEventListener('DOMContentLoaded', (event) => {
+    const scrollContent = document.querySelector('.sponsor-scroll');
+    
+    // Clone the sponsor logos to ensure seamless looping
+    scrollContent.innerHTML += scrollContent.innerHTML;
+
+    // Function to restart animation
+    function restartAnimation() {
+        scrollContent.style.animation = 'none';
+        scrollContent.offsetHeight; // Trigger reflow
+        scrollContent.style.animation = null;
+    }
+
+    // Restart animation when it ends
+    scrollContent.addEventListener('animationiteration', restartAnimation);
+
+    // Pause animation on hover
+    const scrollContainer = document.querySelector('.sponsor-scroll-container');
+    scrollContainer.addEventListener('mouseenter', () => {
+        scrollContent.style.animationPlayState = 'paused';
+    });
+
+    scrollContainer.addEventListener('mouseleave', () => {
+        scrollContent.style.animationPlayState = 'running';
+    });
+});
+
+
+        // Initialize schedule
+        populateSchedule();
+
+        // Day selector functionality
+        const dayButtons = document.querySelectorAll('.day-selector button');
+        dayButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                dayButtons.forEach(btn => btn.classList.remove('active'));
+                button.classList.add('active');
+                // Here you would typically load different schedule data based on the selected day
+            });
+        });
+    </script>
+</body>
+</html>
