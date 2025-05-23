@@ -15,14 +15,31 @@
             });
         });
 
+        // Debug: Log current time and timezone
+        console.log('Current local time (browser):', new Date().toString());
+        console.log('Current UTC time:', new Date().toISOString());
+        console.log('Browser timezone:', Intl.DateTimeFormat().resolvedOptions().timeZone);
+        
         // Countdown Timer
         function updateCountdown() {
-            // Set event date to June 20, 2025, 10:00 AM WAT (Nigeria Time)
+            // Using a fixed timestamp for the event (June 20, 2025 10:00 AM WAT)
+            // WAT is UTC+1, so we'll create the date in local time and adjust
             const eventDate = new Date('2025-06-20T10:00:00+01:00');
             const now = new Date();
             
+            // Get the timezone offset in minutes and convert to milliseconds
+            const timezoneOffset = now.getTimezoneOffset() * 60000;
+            
+            // Adjust for local timezone and WAT (UTC+1)
+            const localTime = new Date(now.getTime() + timezoneOffset + (3600000 * 1));
+            
             // Calculate the difference in milliseconds
-            let diff = eventDate - now;
+            let diff = eventDate - localTime;
+            
+            // Debug log
+            console.log('Event date:', eventDate);
+            console.log('Adjusted local time:', localTime);
+            console.log('Time difference (ms):', diff);
             
             if (diff <= 0) {
                 // Event has passed
