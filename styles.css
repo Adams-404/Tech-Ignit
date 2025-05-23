@@ -403,13 +403,18 @@ main {
     color: #333; /* Darker text color for better contrast */
 }
 
-.schedule h2,
+.schedule h2 {
+    color: #000; /* Black color for the main heading */
+    font-size: 2.8rem;
+    margin-bottom: 1.5rem;
+}
+
 .schedule h3,
 .schedule p,
 .schedule .content h3,
 .schedule .time,
 .schedule .description {
-    color: #333; /* Ensure all text is dark and visible */
+    color: #333; /* Dark gray for other text */
 }
 
 .schedule-item {
