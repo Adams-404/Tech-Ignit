@@ -1,0 +1,545 @@
+/* Sponsors Page Styles */
+:root {
+    --primary: #F4B400;
+    --background: #000000;
+    --text: #FAF6F0;
+    --card-bg: #1A1A1A;
+    --accent: #4285F4;
+    --font-heading: 'Agbalumo', -apple-system, BlinkMacSystemFont, sans-serif;
+    --font-body: 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI', Oxygen, Ubuntu, Cantarell, sans-serif;
+    --font-special: 'Indie Flower', cursive;
+    --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    --shadow-sm: 0 4px 6px rgba(0, 0, 0, 0.1);
+    --shadow-md: 0 8px 16px rgba(0, 0, 0, 0.2);
+    --shadow-lg: 0 15px 30px rgba(0, 0, 0, 0.3);
+}
+
+/* Sponsors Page Specific Styles */
+.sponsors-page {
+    background: var(--background);
+    color: var(--text);
+    font-family: var(--font-body);
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading);
+    margin: 0 0 1.5rem;
+    line-height: 1.2;
+}
+
+h1 { font-size: 3.5rem; }
+h2 { font-size: 2.5rem; }
+h3 { font-size: 1.8rem; }
+
+a {
+    color: var(--primary);
+    text-decoration: none;
+    transition: var(--transition);
+}
+
+a:hover {
+    opacity: 0.9;
+}
+
+/* Navigation - Inherits from main styles */
+.nav-menu a.active {
+    color: var(--primary);
+    position: relative;
+}
+
+.nav-menu a.active::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: var(--primary);
+}
+
+/* Hero Section */
+.sponsor-hero {
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+                url('../images/Group.jpg') center/cover;
+    min-height: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 8rem 2rem 4rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-content {
+    max-width: 1000px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 2;
+}
+
+.sponsor-hero h1 {
+    font-size: 4.5rem;
+    margin-bottom: 1.5rem;
+    line-height: 1.1;
+    color: var(--text);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.sponsor-hero .highlight {
+    color: var(--primary);
+    display: block;
+    font-size: 5rem;
+    line-height: 1;
+    margin-bottom: 1rem;
+}
+
+.sponsor-hero .tagline {
+    font-size: 1.8rem;
+    margin-bottom: 2.5rem;
+    color: var(--text);
+    font-family: var(--font-body);
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    opacity: 0.9;
+}
+
+.hero-stats {
+    display: flex;
+    justify-content: center;
+    gap: 3rem;
+    margin: 3rem 0;
+    flex-wrap: wrap;
+}
+
+.stat-item {
+    text-align: center;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 1.5rem 2rem;
+    border-radius: 10px;
+    backdrop-filter: blur(5px);
+    min-width: 180px;
+    transition: var(--transition);
+}
+
+.stat-item:hover {
+    transform: translateY(-5px);
+    background: rgba(255, 255, 255, 0.15);
+}
+
+.stat-number {
+    display: block;
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--primary);
+    margin-bottom: 0.5rem;
+    line-height: 1;
+}
+
+.stat-label {
+    font-size: 1.1rem;
+    color: var(--text);
+    opacity: 0.9;
+}
+
+/* Section Styles */
+section {
+    padding: 5rem 0;
+}
+
+section h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+    color: var(--dark);
+    position: relative;
+    padding-bottom: 1rem;
+}
+
+section h2:after {
+    content: '';
+    position: absolute;
+    width: 80px;
+    height: 4px;
+    background: var(--primary);
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 2px;
+}
+
+/* Cards */
+.card {
+    background: var(--card-bg);
+    border-radius: 12px;
+    padding: 2.5rem;
+    box-shadow: var(--shadow-md);
+    transition: var(--transition);
+    height: 100%;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    position: relative;
+    overflow: hidden;
+}
+
+.card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: var(--gradient);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.5s ease;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: var(--shadow-lg);
+}
+
+.card:hover::before {
+    transform: scaleX(1);
+}
+
+.card h3 {
+    color: var(--primary);
+    margin-bottom: 1.5rem;
+    font-size: 1.8rem;
+    font-family: var(--font-heading);
+}
+
+.card p {
+    color: var(--text);
+    opacity: 0.9;
+    margin-bottom: 1.5rem;
+    line-height: 1.7;
+}
+
+/* Grid Layouts */
+.grid-layout,
+.event-grid,
+.audience-grid,
+.benefits-grid,
+.tiers-grid,
+.opportunities-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin: 2rem 0;
+}
+
+/* Welcome Box */
+.welcome-box {
+    background: rgba(255, 255, 255, 0.05);
+    border-left: 4px solid var(--primary);
+    padding: 3rem;
+    margin: 3rem 0 5rem;
+    border-radius: 0 12px 12px 0;
+    position: relative;
+    overflow: hidden;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    transition: var(--transition);
+}
+
+.welcome-box:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-lg);
+}
+
+.welcome-box h3 {
+    font-size: 2rem;
+    color: var(--primary);
+    margin-bottom: 1.5rem;
+    position: relative;
+    display: inline-block;
+}
+
+.welcome-box h3::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    width: 60px;
+    height: 3px;
+    background: var(--primary);
+    border-radius: 3px;
+}
+
+.welcome-box h3 {
+    color: var(--dark);
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+}
+
+/* Event Cards */
+.event-card,
+.audience-card,
+.benefit-card,
+.opportunity-card {
+    background: var(--white);
+    border-radius: 8px;
+    padding: 2rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    height: 100%;
+}
+
+.event-card:hover,
+.audience-card:hover,
+.benefit-card:hover,
+.opportunity-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.event-card h3,
+.audience-card h3,
+.benefit-card h3,
+.tier-card h3,
+.opportunity-card h3 {
+    color: var(--dark);
+    margin-bottom: 1rem;
+    font-size: 1.3rem;
+}
+
+/* Lists */
+.event-card ul,
+.tier-card ul {
+    list-style: none;
+    padding: 0;
+    margin: 1rem 0;
+}
+
+.event-card ul li,
+.tier-card ul li {
+    padding: 0.5rem 0;
+    padding-left: 1.5rem;
+    position: relative;
+}
+
+.event-card ul li:before,
+.tier-card ul li:before {
+    content: '•';
+    color: var(--primary);
+    font-weight: bold;
+    position: absolute;
+    left: 0;
+}
+
+/* Icons */
+.audience-card,
+.benefit-card {
+    text-align: center;
+}
+
+.audience-card i,
+.benefit-card i {
+    font-size: 2.5rem;
+    color: var(--primary);
+    margin-bottom: 1rem;
+    background: rgba(244, 180, 0, 0.1);
+    width: 80px;
+    height: 80px;
+    line-height: 80px;
+    border-radius: 50%;
+    display: inline-block;
+}
+
+/* Tier Cards */
+.tier-card {
+    background: var(--card-bg);
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: var(--shadow-md);
+    transition: var(--transition);
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.tier-card {
+    padding: 2rem;
+}
+
+.tier-card.platinum {
+    border-color: #e5e4e2;
+}
+
+.tier-card.gold {
+    border-color: #ffd700;
+}
+
+.tier-card.silver {
+    border-color: #c0c0c0;
+}
+
+.tier-card.bronze {
+    border-color: #cd7f32;
+}
+
+.tier-card h3 {
+    color: var(--primary);
+    margin-bottom: 1.5rem;
+    font-size: 1.8rem;
+    font-family: var(--font-heading);
+}
+
+.tier-card .price {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--primary);
+    margin: 1.5rem 0;
+}
+
+.tier-card ul {
+    text-align: left;
+    margin: 2rem 0;
+    padding: 0;
+    list-style: none;
+}
+
+.tier-card ul li {
+    padding: 0.8rem 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    color: var(--text);
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+}
+
+.tier-card ul li:last-child {
+    border-bottom: none;
+}
+
+.tier-card ul li i {
+    color: var(--primary);
+    font-size: 1.2rem;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .sponsor-hero h1 {
+        font-size: 3.5rem;
+    }
+    
+    .sponsor-hero .highlight {
+        font-size: 4rem;
+    }
+    
+    .sponsor-hero .tagline {
+        font-size: 1.5rem;
+    }
+    
+    .hero-stats {
+        gap: 1.5rem;
+    }
+    
+    .stat-item {
+        min-width: 160px;
+        padding: 1.25rem 1.5rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .nav-menu {
+        left: 0;
+    }
+    
+    .hamburger {
+        display: block;
+        cursor: pointer;
+    }
+    
+    .hamburger .bar {
+        display: block;
+        width: 25px;
+        height: 3px;
+        margin: 5px 0;
+        background: var(--white);
+        transition: all 0.3s ease;
+    }
+    
+    .sponsor-hero {
+        padding: 8rem 1rem 4rem;
+    }
+    
+    .sponsor-hero h1 {
+        font-size: 2.5rem;
+    }
+    
+    .sponsor-hero h2 {
+        font-size: 1.8rem;
+    }
+    
+    .sponsor-hero .tagline {
+        font-size: 1.2rem;
+    }
+    
+    section h2 {
+        font-size: 2rem;
+    }
+    
+    .grid-layout,
+    .event-grid,
+    .audience-grid,
+    .benefits-grid,
+    .tiers-grid,
+    .opportunities-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .mentor-cta {
+        padding: 2rem 1rem;
+    }
+    
+    .mentor-cta h3 {
+        font-size: 1.5rem;
+    }
+}
+
+/* Animation */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.fadeInUp {
+    animation: fadeInUp 0.6s ease forwards;
+}
+
+/* Utility Classes */
+.text-center {
+    text-align: center;
+}
+
+.mt-1 { margin-top: 0.5rem; }
+.mt-2 { margin-top: 1rem; }
+.mt-3 { margin-top: 1.5rem; }
+.mt-4 { margin-top: 2rem; }
+.mt-5 { margin-top: 3rem; }
+
+.mb-1 { margin-bottom: 0.5rem; }
+.mb-2 { margin-bottom: 1rem; }
+.mb-3 { margin-bottom: 1.5rem; }
+.mb-4 { margin-bottom: 2rem; }
+.mb-5 { margin-bottom: 3rem; }
