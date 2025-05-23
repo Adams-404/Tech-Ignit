@@ -17,10 +17,12 @@
 
         // Countdown Timer
         function updateCountdown() {
-            const eventDate = new Date('2025-01-12T09:00:00'); // January 12, 2025, 9:00 AM
+            // Set event date to June 20, 2025, 10:00 AM WAT (Nigeria Time)
+            const eventDate = new Date('2025-06-20T10:00:00+01:00');
             const now = new Date();
             
-            const diff = eventDate - now;
+            // Calculate the difference in milliseconds
+            let diff = eventDate - now;
             
             if (diff <= 0) {
                 // Event has passed
@@ -28,18 +30,50 @@
                 document.getElementById('hours').textContent = '00';
                 document.getElementById('minutes').textContent = '00';
                 document.getElementById('seconds').textContent = '00';
+                
+                // Update the countdown container to show event has started
+                const countdownContainer = document.querySelector('.countdown-container');
+                if (countdownContainer) {
+                    countdownContainer.innerHTML = `
+                        <div class="event-started">
+                            <h3>Event is happening now!</h3>
+                            <p>Join us at Tech Ignite 2025</p>
+                        </div>
+                    `;
+                }
                 return;
             }
             
+            // Calculate time units
             const days = Math.floor(diff / (1000 * 60 * 60 * 24));
-            const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-            const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
-            const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+            diff -= days * (1000 * 60 * 60 * 24);
             
-            document.getElementById('days').textContent = days.toString().padStart(2, '0');
-            document.getElementById('hours').textContent = hours.toString().padStart(2, '0');
-            document.getElementById('minutes').textContent = minutes.toString().padStart(2, '0');
-            document.getElementById('seconds').textContent = seconds.toString().padStart(2, '0');
+            const hours = Math.floor(diff / (1000 * 60 * 60));
+            diff -= hours * (1000 * 60 * 60);
+            
+            const minutes = Math.floor(diff / (1000 * 60));
+            diff -= minutes * (1000 * 60);
+            
+            const seconds = Math.floor(diff / 1000);
+            
+            // Update the countdown display
+            const daysElement = document.getElementById('days');
+            const hoursElement = document.getElementById('hours');
+            const minutesElement = document.getElementById('minutes');
+            const secondsElement = document.getElementById('seconds');
+            
+            if (daysElement) daysElement.textContent = days.toString().padStart(2, '0');
+            if (hoursElement) hoursElement.textContent = hours.toString().padStart(2, '0');
+            if (minutesElement) minutesElement.textContent = minutes.toString().padStart(2, '0');
+            if (secondsElement) secondsElement.textContent = seconds.toString().padStart(2, '0');
+            
+            // Add animation class when time is running out
+            if (days === 0) {
+                const countdownItems = document.querySelectorAll('.countdown-item');
+                countdownItems.forEach(item => {
+                    item.classList.add('pulse');
+                });
+            }
         }
 
         // Update countdown every second
