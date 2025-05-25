@@ -1388,6 +1388,27 @@ main {
         padding: 2rem 1rem;
     }
     
+    /* Speakers section with subtle gradient fade */
+    .speakers {
+        position: relative;
+    }
+    
+    .speakers::after {
+        content: '';
+        position: absolute;
+        bottom: -30px;
+        left: 0;
+        right: 0;
+        height: 80px;
+        background: linear-gradient(to bottom, 
+            rgba(0, 0, 0, 0.3) 0%, 
+            rgba(0, 0, 0, 0.2) 30%,
+            rgba(0, 0, 0, 0.1) 60%,
+            rgba(0, 0, 0, 0) 100%);
+        z-index: 2;
+        pointer-events: none;
+    }
+    
     .topics {
         padding: 10rem 1rem 5rem; /* Maximum top padding */
         position: relative;
@@ -1424,12 +1445,34 @@ main {
 /* Modern Topics Section */
 .topics-section {
     padding: 6rem 1rem;
-    background: linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.9)),
-                url('images/GDG-Bevy-ChapterBanner.webp') center/cover;
+    background: 
+        linear-gradient(
+            to bottom,
+            rgba(0, 0, 0, 0.98) 0%,
+            rgba(0, 0, 0, 0.7) 40%,
+            rgba(0, 0, 0, 0.7) 60%,
+            rgba(0, 0, 0, 0.98) 100%
+        ),
+        url('images/GDG-Bevy-ChapterBanner.webp') center/cover;
     position: relative;
     overflow: hidden;
     margin-top: -180px;
     padding-top: 230px;
+}
+
+/* Make background darker at top and bottom on mobile */
+@media (max-width: 768px) {
+    .topics-section {
+        background: 
+            linear-gradient(
+                to bottom,
+                rgba(0, 0, 0, 0.98) 0%,
+                rgba(0, 0, 0, 0.7) 40%,
+                rgba(0, 0, 0, 0.7) 60%,
+                rgba(0, 0, 0, 0.98) 100%
+            ),
+            url('images/GDG-Bevy-ChapterBanner.webp') center/cover;
+    }
 }
 
 .topics-section .container {
@@ -1752,15 +1795,17 @@ html {
     box-sizing: border-box;
 }
 
-.sponsors::before {
+.sponsors::after {
     content: '';
     position: absolute;
-    width: 800px;
-    height: 800px;
-    background: radial-gradient(circle, rgba(244,180,0,0.1) 0%, rgba(0,0,0,0) 70%);
-    top: -400px;
-    right: -400px;
-    border-radius: 50%;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 300px;
+    background: linear-gradient(to top, 
+        rgba(244, 180, 0, 0.1) 0%, 
+        rgba(0, 0, 0, 0) 100%);
+    pointer-events: none;
 }
 
 .sponsors h2 {
