@@ -48,6 +48,38 @@ a:hover {
     opacity: 0.9;
 }
 
+/* Home Button */
+.home-button {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--primary);
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    border: 1px solid var(--primary);
+    border-radius: 25px;
+    transition: all 0.3s ease;
+}
+
+.home-button:hover {
+    background: rgba(244, 180, 0, 0.1);
+}
+
+.home-button i {
+    font-size: 1.2rem;
+}
+
+/* Hide regular nav menu on mobile */
+@media (max-width: 768px) {
+    .nav-menu {
+        display: none;
+    }
+    
+    .home-button {
+        margin-left: auto;
+    }
+}
+
 /* Navigation - Inherits from main styles */
 .nav-menu a.active {
     color: var(--primary);

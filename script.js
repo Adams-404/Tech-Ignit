@@ -1,10 +1,24 @@
-// Hamburger Menu Animation
-        const hamburger = document.querySelector('.hamburger');
-        const navMenu = document.querySelector('.nav-menu');
+// Hamburger Menu Animation - only run on index.html
+if (window.location.pathname.endsWith('index.html') || window.location.pathname.endsWith('/')) {
+    const hamburger = document.querySelector('.hamburger');
+    const navMenu = document.querySelector('.nav-menu');
 
-        hamburger.addEventListener('click', () => {
+    if (hamburger && navMenu) {
+        hamburger.addEventListener('click', (e) => {
+            e.preventDefault();
+            e.stopPropagation();
             hamburger.classList.toggle('active');
             navMenu.classList.toggle('active');
+        });
+
+        // Close menu when clicking outside
+        document.addEventListener('click', (e) => {
+            if (navMenu.classList.contains('active') && 
+                !navMenu.contains(e.target) && 
+                !hamburger.contains(e.target)) {
+                hamburger.classList.remove('active');
+                navMenu.classList.remove('active');
+            }
         });
 
         // Close menu when clicking a link
@@ -14,6 +28,8 @@
                 navMenu.classList.remove('active');
             });
         });
+    }
+}
 
         // Debug: Log current time and timezone
         console.log('Current local time (browser):', new Date().toString());

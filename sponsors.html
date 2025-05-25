@@ -20,11 +20,10 @@
             <span class="location-tag">Gombe</span>
         </div>
         
-        <div class="hamburger">
-            <span></span>
-            <span></span>
-            <span></span>
-        </div>
+        <a href="index.html" class="home-button">
+            <i class="fas fa-home"></i>
+            <span>Home</span>
+        </a>
 
         <div class="nav-menu">
             <a href="index.html">Home</a>
@@ -264,54 +263,58 @@
             <div class="about-section">
                 <button class="about-button" id="aboutButton">About Tech Ignit 2025</button>
                 <p class="about-text" id="aboutText" style="display: none;">
-                    Tech Ignit is an annual tech conference organized by GDG Gombe State University, bringing together tech enthusiasts, developers, and industry experts for a day of learning, networking, and innovation.
+                    Tech Ignit is an annual conference for tech enthusiasts from novices to industry leaders organized by the Google Developer Group Gombe (GDG Gombe). The event features sessions on various topics, including AI/ML, Mobile Development, Design, Web Development, Cloud Computing, DevOps, Cybersecurity, and more.
                 </p>
             </div>
-            <div class="footer-content">
-                <div class="footer-logo">
-                    <img src="images/footer-logo.svg" alt="Tech Ignit Logo">
-                </div>
-                <div class="footer-links">
+            <div class="footer-grid">
+                <div class="footer-column">
                     <h3>Quick Links</h3>
-                    <ul>
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="index.html#schedule">Schedule</a></li>
-                        <li><a href="index.html#workshops">Workshops</a></li>
-                        <li><a href="index.html#sponsors">Sponsors</a></li>
-                        <li><a href="sponsors.html">Become a Sponsor</a></li>
-                    </ul>
+                    <a href="#schedule">Schedule</a>
+                    <a href="#speakers">Events</a>
+                    <a href="#faq">FAQs</a>
+                    <a href="#generator">DP Generator</a>
                 </div>
-                <div class="footer-social">
+                <div class="footer-column">
+                    <h3>Event Info</h3>
+                    <a href="https://maps.app.goo.gl/TNme98P8knEo5mbj6" target="_blank" aria-label="Venue Information">Venue Information</a>
+                    <a href="#tickets">View Ticket</a>
+                    <a href="#trivia">Play Trivia</a>
+                    <a href="#community">Join the Community</a>
+                </div>
+                <div class="footer-column">
                     <h3>Follow Us</h3>
                     <div class="social-icons">
-                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://x.com/gdgocgsu" aria-label="Twitter" target="_blank">
+                            <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+                            </svg>
+                        </a>
+                        <a href="https://www.instagram.com/gdgoc_gsu/" aria-label="Instagram" target="_blank">
+                            <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                            </svg>
+                        </a>
+                        <a href="https://www.linkedin.com/company/gdsc-gombe-state-university/" aria-label="LinkedIn" target="_blank">
+                            <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M4.98 3.5C4.98 4.88 3.88 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1 4.98 2.12 4.98 3.5zM0 8h5V24H0V8zm8 0h4.64v2.164h.064c.647-1.222 2.229-2.514 4.586-2.514 4.907 0 5.713 3.228 5.713 7.426V24H18V15.436c0-2.039-.036-4.666-2.84-4.666-2.852 0-3.288 2.22-3.288 4.512V24h-5V8z"/>
+                            </svg>
+                        </a>
                     </div>
-                    <a href="mailto:gdggombe@gmail.com" class="contact-email">
-                        <i class="fas fa-envelope"></i> gdggombe@gmail.com
-                    </a>
+                    <a href="#contact">Contact Us</a>
+                    <a href="#privacy">Privacy Policy</a>
+                </div>
+                <div class="footer-column">
+                    <h3>Additional Info</h3>
+                    <a href="#guidelines">Community Guidelines</a>
+                    <a href="#code">Code of Conduct</a>
                 </div>
             </div>
-            <div class="footer-bottom">
-                <p>&copy; 2025 Tech Ignit. All rights reserved. <span>Powered by GDG Gombe State University</span></p>
+            <div class="logo-section">
+                <img src="images/footer-logo.svg" alt="Tech Ignit Logo" class="logo-image">
+                <div class="event-title">Tech Ignit 2025</div>
             </div>
         </div>
     </footer>
-    <script>
-        // Toggle about text
-        document.getElementById('aboutButton').addEventListener('click', function() {
-            const aboutText = document.getElementById('aboutText');
-            if (aboutText.style.display === 'none' || aboutText.style.display === '') {
-                aboutText.style.display = 'block';
-                this.textContent = 'Hide';
-            } else {
-                aboutText.style.display = 'none';
-                this.textContent = 'About Tech Ignit 2025';
-            }
-        });
-    </script>
 
     <script src="sponsors.js"></script>
     <script src="script.js"></script>
