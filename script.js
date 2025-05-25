@@ -22,9 +22,12 @@
         
         // Countdown Timer
         function updateCountdown() {
-            // Using a fixed timestamp for the event (June 20, 2025 10:00 AM WAT)
-            // WAT is UTC+1, so we'll create the date in local time and adjust
-            const eventDate = new Date('2025-06-20T10:00:00+01:00');
+            // Event dates (June 20-22, 2025)
+            const eventStart = new Date('2025-06-20T10:00:00+01:00');
+            const day2 = new Date('2025-06-21T00:00:00+01:00');
+            const day3 = new Date('2025-06-22T00:00:00+01:00');
+            const eventEnd = new Date('2025-06-22T23:59:59+01:00');
+            
             const now = new Date();
             
             // Get the timezone offset in minutes and convert to milliseconds
@@ -34,34 +37,40 @@
             const localTime = new Date(now.getTime() + timezoneOffset + (3600000 * 1));
             
             // Calculate the difference in milliseconds
-            let diff = eventDate - localTime;
+            let diff = eventStart - localTime;
             
             // Debug log
-            console.log('Event date:', eventDate);
+            console.log('Event start:', eventStart);
+            console.log('Event end:', eventEnd);
             console.log('Adjusted local time:', localTime);
             console.log('Time difference (ms):', diff);
             
-            if (diff <= 0) {
-                // Event has passed
-                document.getElementById('days').textContent = '00';
-                document.getElementById('hours').textContent = '00';
-                document.getElementById('minutes').textContent = '00';
-                document.getElementById('seconds').textContent = '00';
+            const countdownContainer = document.querySelector('.countdown-container');
+            const countdownItems = document.querySelectorAll('.countdown-item');
+            
+            if (localTime >= eventStart && localTime <= eventEnd) {
+                // Event is happening now
+                countdownContainer.innerHTML = '<div class="event-status">🎉 Happening Now - ';
                 
-                // Update the countdown container to show event has started
-                const countdownContainer = document.querySelector('.countdown-container');
-                if (countdownContainer) {
-                    countdownContainer.innerHTML = `
-                        <div class="event-started">
-                            <h3>Event is happening now!</h3>
-                            <p>Join us at Tech Ignite 2025</p>
-                        </div>
-                    `;
+                if (localTime < day2) {
+                    countdownContainer.innerHTML += 'Day 1: Hackathon 🚀</div>';
+                } else if (localTime < day3) {
+                    countdownContainer.innerHTML += 'Day 2: Conference & Celebrations 🎤</div>';
+                } else {
+                    countdownContainer.innerHTML += 'Day 3: Games & Community 🎮</div>';
                 }
+                return;
+            } else if (localTime > eventEnd) {
+                // Event has passed
+                countdownContainer.innerHTML = '<div class="event-status">🎉 Event Concluded - Thanks for joining us! See you next year! 🎉</div>';
                 return;
             }
             
-            // Calculate time units
+            // Event is in the future, show countdown
+            countdownContainer.style.display = 'flex';
+            countdownItems.forEach(item => item.style.display = 'block');
+            
+            // Calculate time remaining
             const days = Math.floor(diff / (1000 * 60 * 60 * 24));
             diff -= days * (1000 * 60 * 60 * 24);
             
@@ -72,6 +81,11 @@
             diff -= minutes * (1000 * 60);
             
             const seconds = Math.floor(diff / 1000);
+            
+            // Add animation class when time is running out (last 24 hours)
+            if (days === 0) {
+                countdownItems.forEach(item => item.classList.add('pulse'));
+            }
             
             // Update the countdown display
             const daysElement = document.getElementById('days');

@@ -248,6 +248,45 @@ p {
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
 }
 
+/* Event Status Messages */
+.event-status {
+    font-size: 2rem;
+    font-weight: bold;
+    text-align: center;
+    margin: 2rem 0;
+    padding: 1.5rem;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    animation: pulse 2s infinite;
+    color: var(--primary);
+    width: 100%;
+    max-width: 800px;
+    margin: 2rem auto;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.02); }
+    100% { transform: scale(1); }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .event-status {
+        font-size: 1.5rem;
+        padding: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .event-status {
+        font-size: 1.2rem;
+        padding: 0.8rem;
+    }
+}
+
 .countdown-item.pulse {
     animation: pulse 1s infinite;
 }
