@@ -157,12 +157,37 @@
                 });
             });
 
-            // Initialize the Day 1 tab by default
+            // Initialize the Day 1 tab by default without triggering scroll
+            const day1Content = document.getElementById('day1');
             const day1Tab = document.querySelector('.tab-btn[data-day="day1"]');
-            if (day1Tab) {
-                day1Tab.click(); // Trigger click to show Day 1 content
+            
+            // First, hide all schedule days
+            document.querySelectorAll('.schedule-day').forEach(day => {
+                day.style.display = 'none';
+                day.classList.remove('active');
+            });
+            
+            // Remove active class from all tabs
+            document.querySelectorAll('.tab-btn').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            
+            // Show Day 1 content and activate its tab
+            if (day1Tab && day1Content) {
+                day1Tab.classList.add('active');
+                day1Content.style.display = 'block';
+                day1Content.classList.add('active');
             } else if (tabBtns.length > 0) {
-                tabBtns[0].click(); // Fallback to first tab
+                // Fallback to first tab if Day 1 is not found
+                const firstBtn = tabBtns[0];
+                const firstDayId = firstBtn.getAttribute('data-day');
+                const firstDay = document.getElementById(firstDayId);
+                
+                if (firstDay) {
+                    firstBtn.classList.add('active');
+                    firstDay.style.display = 'block';
+                    firstDay.classList.add('active');
+                }
             }
         });
 
