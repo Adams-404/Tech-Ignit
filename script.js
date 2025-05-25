@@ -97,6 +97,34 @@
         setInterval(updateCountdown, 1000);
         updateCountdown(); // Initial call
 
+        // Schedule Tabs
+        document.addEventListener('DOMContentLoaded', function() {
+            const tabBtns = document.querySelectorAll('.tab-btn');
+            const scheduleDays = document.querySelectorAll('.schedule-day');
+
+            tabBtns.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    // Remove active class from all buttons and days
+                    tabBtns.forEach(b => b.classList.remove('active'));
+                    scheduleDays.forEach(day => day.classList.remove('active'));
+                    
+                    // Add active class to clicked button
+                    btn.classList.add('active');
+                    
+                    // Show corresponding day content
+                    const dayToShow = document.getElementById(btn.dataset.day);
+                    if (dayToShow) {
+                        dayToShow.classList.add('active');
+                    }
+                });
+            });
+
+            // Initialize first tab as active
+            if (tabBtns.length > 0) {
+                tabBtns[0].click();
+            }
+        });
+
         // Sample schedule data
         const scheduleData = [
             {

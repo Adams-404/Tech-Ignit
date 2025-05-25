@@ -93,58 +93,699 @@
         </section>
 
         <section class="schedule" id="schedule">
-            <h2>Igniting Minds, Fueling Innovation</h2>
-            <p>At Tech Ignit 2025, we're bringing together the brightest minds and latest technologies. Immerse yourself in cutting-edge talks, hands-on workshops, and networking opportunities that will shape the future of tech.</p>
-          
-            <div class="day-selector">
-                <button class="active">Tech Ignit Agenda</button>
+            <div class="container">
+                <h2>What Is Tech Ignite 2025?</h2>
+                <p class="section-subtitle">A three-day technology extravaganza packed with innovation, learning, and community building. Here's what each day has in store:</p>
+                
+                <div class="schedule-tabs">
+                    <button class="tab-btn active" data-day="day1">Day 1: Hackathon</button>
+                    <button class="tab-btn" data-day="day2">Day 2: Conference</button>
+                    <button class="tab-btn" data-day="day3">Day 3: Community</button>
+                </div>
+                
+                <div class="schedule-content">
+                    <!-- Day 1: Hackathon -->
+                    <div class="schedule-day active" id="day1">
+                        <div class="timeline">
+                            <div class="timeline-item">
+                                <div class="timeline-time">09:00 AM</div>
+                                <div class="timeline-content">
+                                    <div class="timeline-dot"><i class="fas fa-code"></i></div>
+                                    <div class="timeline-details">
+                                        <h3 class="timeline-title">Registration & Breakfast</h3>
+                                        <p>Check-in and networking</p>
+                                        <div class="timeline-info">
+                                            <span class="timeline-location"><i class="fas fa-map-marker-alt"></i> Main Lobby</span>
+                                            <span class="timeline-duration">1 hour</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="timeline-item">
+                                <div class="timeline-time">10:00 AM</div>
+                                <div class="timeline-content">
+                                    <div class="timeline-dot"><i class="fas fa-flag-checkered"></i></div>
+                                    <div class="timeline-details">
+                                        <h3 class="timeline-title">Opening & Theme Reveal</h3>
+                                        <p>Kickoff the hackathon with key announcements</p>
+                                        <div class="timeline-info">
+                                            <span class="timeline-location"><i class="fas fa-map-marker-alt"></i> Main Stage</span>
+                                            <span class="timeline-duration">1 hour</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="timeline-item highlight">
+                                <div class="timeline-time">11:00 AM</div>
+                                <div class="timeline-content">
+                                    <div class="timeline-dot"><i class="fas fa-code"></i></div>
+                                    <div class="timeline-details">
+                                        <h3 class="timeline-title">Coding Marathon Begins</h3>
+                                        <p>Focused on AI, education, and breakthrough ideas</p>
+                                        <div class="timeline-info">
+                                            <span class="timeline-location"><i class="fas fa-map-marker-alt"></i> Hackathon Hall</span>
+                                            <span class="timeline-duration">3 hours</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="timeline-item">
+                                <div class="timeline-time">02:00 PM</div>
+                                <div class="timeline-content">
+                                    <div class="timeline-dot"><i class="fas fa-utensils"></i></div>
+                                    <div class="timeline-details">
+                                        <h3 class="timeline-title">Lunch Break</h3>
+                                        <p>Networking and team bonding</p>
+                                        <div class="timeline-info">
+                                            <span class="timeline-location"><i class="fas fa-utensils"></i> Dining Area</span>
+                                            <span class="timeline-duration">1 hour</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="timeline-item highlight">
+                                <div class="timeline-time">03:00 PM</div>
+                                <div class="timeline-content">
+                                    <div class="timeline-dot"><i class="fas fa-users"></i></div>
+                                    <div class="timeline-details">
+                                        <h3 class="timeline-title">Team Challenges</h3>
+                                        <p>Tackling real-world problems in AI, education, and beyond</p>
+                                        <div class="timeline-info">
+                                            <span class="timeline-location"><i class="fas fa-map-marker-alt"></i> Hackathon Hall</span>
+                                            <span class="timeline-duration">2 hours</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="timeline-item highlight">
+                                <div class="timeline-time">05:00 PM</div>
+                                <div class="timeline-content">
+                                    <div class="timeline-dot"><i class="fas fa-robot"></i></div>
+                                    <div class="timeline-details">
+                                        <h3 class="timeline-title">"Build with AI" Mentorship</h3>
+                                        <p>Guidance from industry experts</p>
+                                        <div class="timeline-info">
+                                            <span class="timeline-location"><i class="fas fa-map-marker-alt"></i> Workshop Room A</span>
+                                            <span class="timeline-duration">1.5 hours</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="timeline-item highlight">
+                                <div class="timeline-time">06:30 PM</div>
+                                <div class="timeline-content">
+                                    <div class="timeline-dot"><i class="fas fa-trophy"></i></div>
+                                    <div class="timeline-details">
+                                        <h3 class="timeline-title">Day 1 Wrap-up</h3>
+                                        <p>Team check-ins and progress sharing</p>
+                                        <div class="timeline-info">
+                                            <span class="timeline-location"><i class="fas fa-map-marker-alt"></i> Main Stage</span>
+                                            <span class="timeline-duration">1 hour</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Day 2: Conference & Celebrations -->
+                    <div class="schedule-day" id="day2">
+                        <div class="timeline">
+                            <div class="timeline-item">
+                                <div class="timeline-time">09:30 AM</div>
+                                <div class="timeline-content">
+                                    <div class="timeline-dot"><i class="fas fa-coffee"></i></div>
+                                    <div class="timeline-details">
+                                        <h3 class="timeline-title">Registration & Morning Coffee</h3>
+                                        <p>Networking and welcome refreshments</p>
+                                        <div class="timeline-info">
+                                            <span class="timeline-location"><i class="fas fa-map-marker-alt"></i> Conference Lobby</span>
+                                            <span class="timeline-duration">30 mins</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="timeline-item highlight">
+                                <div class="timeline-time">10:00 AM</div>
+                                <div class="timeline-content">
+                                    <div class="timeline-dot"><i class="fas fa-chalkboard-teacher"></i></div>
+                                    <div class="timeline-details">
+                                        <h3 class="timeline-title">Opening Keynote</h3>
+                                        <p>Future of AI and Technology in Education</p>
+                                        <div class="timeline-info">
+                                            <span class="timeline-location"><i class="fas fa-map-marker-alt"></i> Main Hall</span>
+                                            <span class="timeline-duration">1 hour</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="timeline-item">
+                                <div class="timeline-time">11:15 AM</div>
+                                <div class="timeline-content">
+                                    <div class="timeline-dot"><i class="fas fa-laptop"></i></div>
+                                    <div class="timeline-details">
+                                        <h3 class="timeline-title">Interactive AI Workshop</h3>
+                                        <p>Hands-on experience with cutting-edge AI</p>
+                                        <div class="timeline-info">
+                                            <span class="timeline-location"><i class="fas fa-map-marker-alt"></i> Workshop Room A</span>
+                                            <span class="timeline-duration">1.5 hours</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="timeline-item">
+                                <div class="timeline-time">12:45 PM</div>
+                                <div class="timeline-content">
+                                    <div class="timeline-dot"><i class="fas fa-utensils"></i></div>
+                                    <div class="timeline-details">
+                                        <h3 class="timeline-title">Networking Lunch</h3>
+                                        <p>Connect with speakers and participants</p>
+                                        <div class="timeline-info">
+                                            <span class="timeline-location"><i class="fas fa-utensils"></i> Dining Area</span>
+                                            <span class="timeline-duration">1 hour</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="timeline-item highlight">
+                                <div class="timeline-time">02:00 PM</div>
+                                <div class="timeline-content">
+                                    <div class="timeline-dot"><i class="fas fa-star"></i></div>
+                                    <div class="timeline-details">
+                                        <h3 class="timeline-title">Student Showcases</h3>
+                                        <p>Finalist presentations and demonstrations</p>
+                                        <div class="timeline-info">
+                                            <span class="timeline-location"><i class="fas fa-map-marker-alt"></i> Main Stage</span>
+                                            <span class="timeline-duration">2 hours</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="timeline-item highlight">
+                                <div class="timeline-time">04:15 PM</div>
+                                <div class="timeline-content">
+                                    <div class="timeline-dot"><i class="fas fa-award"></i></div>
+                                    <div class="timeline-details">
+                                        <h3 class="timeline-title">Award Ceremony</h3>
+                                        <p>Celebrating achievements and innovations</p>
+                                        <div class="timeline-info">
+                                            <span class="timeline-location"><i class="fas fa-map-marker-alt"></i> Main Stage</span>
+                                            <span class="timeline-duration">45 mins</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="timeline-item highlight">
+                                <div class="timeline-time">05:00 PM</div>
+                                <div class="timeline-content">
+                                    <div class="timeline-dot"><i class="fas fa-graduation-cap"></i></div>
+                                    <div class="timeline-details">
+                                        <h3 class="timeline-title">Tech Academy Pathway 1</h3>
+                                        <p>Grand closing ceremony</p>
+                                        <div class="timeline-info">
+                                            <span class="timeline-location"><i class="fas fa-map-marker-alt"></i> Main Hall</span>
+                                            <span class="timeline-duration">1 hour</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Day 3: Games & Community -->
+                    <div class="schedule-day" id="day3">
+                        <div class="timeline">
+                            <div class="timeline-item">
+                                <div class="timeline-time">10:00 AM</div>
+                                <div class="timeline-content">
+                                    <div class="timeline-dot"><i class="fas fa-coffee"></i></div>
+                                    <div class="timeline-details">
+                                        <h3 class="timeline-title">Morning Registration</h3>
+                                        <p>Check-in and welcome refreshments</p>
+                                        <div class="timeline-info">
+                                            <span class="timeline-location"><i class="fas fa-map-marker-alt"></i> Main Lobby</span>
+                                            <span class="timeline-duration">30 mins</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="timeline-item highlight">
+                                <div class="timeline-time">10:30 AM</div>
+                                <div class="timeline-content">
+                                    <div class="timeline-dot"><i class="fas fa-gamepad"></i></div>
+                                    <div class="timeline-details">
+                                        <h3 class="timeline-title">Tech Games & Esports</h3>
+                                        <p>Friendly competitions and challenges</p>
+                                        <div class="timeline-info">
+                                            <span class="timeline-location"><i class="fas fa-map-marker-alt"></i> Game Zone</span>
+                                            <span class="timeline-duration">2 hours</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="timeline-item highlight">
+                                <div class="timeline-time">12:30 PM</div>
+                                <div class="timeline-content">
+                                    <div class="timeline-dot"><i class="fas fa-utensils"></i></div>
+                                    <div class="timeline-details">
+                                        <h3 class="timeline-title">Community Lunch</h3>
+                                        <p>Casual networking over food</p>
+                                        <div class="timeline-info">
+                                            <span class="timeline-location"><i class="fas fa-utensils"></i> Outdoor Terrace</span>
+                                            <span class="timeline-duration">1 hour</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="timeline-item highlight">
+                                <div class="timeline-time">01:30 PM</div>
+                                <div class="timeline-content">
+                                    <div class="timeline-dot"><i class="fas fa-users"></i></div>
+                                    <div class="timeline-details">
+                                        <h3 class="timeline-title">Team-building Activities</h3>
+                                        <p>Strengthening our tech community</p>
+                                        <div class="timeline-info">
+                                            <span class="timeline-location"><i class="fas fa-map-marker-alt"></i> Activity Center</span>
+                                            <span class="timeline-duration">2 hours</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="timeline-item highlight">
+                                <div class="timeline-time">03:30 PM</div>
+                                <div class="timeline-content">
+                                    <div class="timeline-dot"><i class="fas fa-brain"></i></div>
+                                    <div class="timeline-details">
+                                        <h3 class="timeline-title">Creative AI Challenges</h3>
+                                        <p>Pushing the boundaries of AI innovation</p>
+                                        <div class="timeline-info">
+                                            <span class="timeline-location"><i class="fas fa-map-marker-alt"></i> Innovation Lab</span>
+                                            <span class="timeline-duration">1.5 hours</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="timeline-item highlight">
+                                <div class="timeline-time">05:00 PM</div>
+                                <div class="timeline-content">
+                                    <div class="timeline-dot"><i class="fas fa-heart"></i></div>
+                                    <div class="timeline-details">
+                                        <h3 class="timeline-title">Community Building & Closing</h3>
+                                        <p>Strengthening connections through shared experiences</p>
+                                        <div class="timeline-info">
+                                            <span class="timeline-location"><i class="fas fa-map-marker-alt"></i> Main Hall</span>
+                                            <span class="timeline-duration">1 hour</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                                        <h3 class="timeline-title">Progress Showcase</h3>
+                                        <p>Teams present their day's progress</p>
+                                        <div class="timeline-info">
+                                            <span class="timeline-location"><i class="fas fa-map-marker-alt"></i> Presentation Area</span>
+                                            <span class="timeline-duration">1 hour</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Day 2 -->
+                    <div class="schedule-day" id="day2">
+                        <div class="timeline">
+                            <div class="timeline-item">
+                                <div class="timeline-time">09:00 AM</div>
+                                <div class="timeline-content">
+                                    <div class="timeline-dot"><i class="fas fa-coffee"></i></div>
+                                    <div class="timeline-details">
+                                        <h3 class="timeline-title">Registration & Breakfast</h3>
+                                        <p>Morning refreshments and networking</p>
+                                        <div class="timeline-info">
+                                            <span class="timeline-location"><i class="fas fa-map-marker-alt"></i> Conference Lobby</span>
+                                            <span class="timeline-duration">30 mins</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="timeline-item">
+                                <div class="timeline-time">09:30 AM</div>
+                                <div class="timeline-content">
+                                    <div class="timeline-dot"><i class="fas fa-microphone-alt"></i></div>
+                                    <div class="timeline-details">
+                                        <h3 class="timeline-title">Opening Keynote</h3>
+                                        <p>Inspiring talk on the future of technology</p>
+                                        <div class="timeline-info">
+                                            <span class="timeline-location"><i class="fas fa-map-marker-alt"></i> Main Stage</span>
+                                            <span class="timeline-duration">1 hour</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="timeline-item">
+                                <div class="timeline-time">10:30 AM</div>
+                                <div class="timeline-content">
+                                    <div class="timeline-dot"><i class="fas fa-chalkboard-teacher"></i></div>
+                                    <div class="timeline-details">
+                                        <h3 class="timeline-title">Tech Workshops</h3>
+                                        <p>Hands-on sessions on various tech topics</p>
+                                        <div class="timeline-info">
+                                            <span class="timeline-location"><i class="fas fa-map-marker-alt"></i> Workshop Rooms</span>
+                                            <span class="timeline-duration">1.5 hours</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="timeline-item">
+                                <div class="timeline-time">12:00 PM</div>
+                                <div class="timeline-content">
+                                    <div class="timeline-dot"><i class="fas fa-utensils"></i></div>
+                                    <div class="timeline-details">
+                                        <h3 class="timeline-title">Lunch Break</h3>
+                                        <p>Networking with speakers and attendees</p>
+                                        <div class="timeline-info">
+                                            <span class="timeline-location"><i class="fas fa-utensils"></i> Dining Area</span>
+                                            <span class="timeline-duration">1 hour</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="timeline-item">
+                                <div class="timeline-time">01:00 PM</div>
+                                <div class="timeline-content">
+                                    <div class="timeline-dot"><i class="fas fa-robot"></i></div>
+                                    <div class="timeline-details">
+                                        <h3 class="timeline-title">AI Innovation Panel</h3>
+                                        <p>Discussion on AI advancements and applications</p>
+                                        <div class="timeline-info">
+                                            <span class="timeline-location"><i class="fas fa-map-marker-alt"></i> Main Stage</span>
+                                            <span class="timeline-duration">1 hour</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="timeline-item">
+                                <div class="timeline-time">02:15 PM</div>
+                                <div class="timeline-content">
+                                    <div class="timeline-dot"><i class="fas fa-laptop"></i></div>
+                                    <div class="timeline-details">
+                                        <h3 class="timeline-title">Project Showcases</h3>
+                                        <p>Finalists present their hackathon projects</p>
+                                        <div class="timeline-info">
+                                            <span class="timeline-location"><i class="fas fa-map-marker-alt"></i> Presentation Area</span>
+                                            <span class="timeline-duration">1.5 hours</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="timeline-item">
+                                <div class="timeline-time">04:00 PM</div>
+                                <div class="timeline-content">
+                                    <div class="timeline-dot"><i class="fas fa-award"></i></div>
+                                    <div class="timeline-details">
+                                        <h3 class="timeline-title">Award Ceremony</h3>
+                                        <p>Celebrating the best projects and achievements</p>
+                                        <div class="timeline-info">
+                                            <span class="timeline-location"><i class="fas fa-map-marker-alt"></i> Main Stage</span>
+                                            <span class="timeline-duration">1 hour</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="timeline-item">
+                                <div class="timeline-time">05:00 PM</div>
+                                <div class="timeline-content">
+                                    <div class="timeline-dot"><i class="fas fa-glass-cheers"></i></div>
+                                    <div class="timeline-details">
+                                        <h3 class="timeline-title">Closing Celebration</h3>
+                                        <p>Networking and celebration of achievements</p>
+                                        <div class="timeline-info">
+                                            <span class="timeline-location"><i class="fas fa-map-marker-alt"></i> Main Hall</span>
+                                            <span class="timeline-duration">1 hour</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="timeline-item">
+                                <div class="timeline-time">11:30 AM</div>
+                                <div class="timeline-content">
+                                    <div class="timeline-dot"></div>
+                                    <div class="timeline-details">
+                                        <h3 class="timeline-title">Panel Discussion: AI in Education</h3>
+                                        <div class="timeline-speaker">Moderator: Sarah Johnson</div>
+                                        <div class="timeline-info">
+                                            <span class="timeline-location"><i class="fas fa-map-marker-alt"></i> Room B</span>
+                                            <span class="timeline-duration"><i class="far fa-clock"></i> 11:30 AM - 01:00 PM</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Day 3 -->
+                    <div class="schedule-day" id="day3">
+                        <div class="timeline">
+                            <div class="timeline-item">
+                                <div class="timeline-time">10:00 AM</div>
+                                <div class="timeline-content">
+                                    <div class="timeline-dot"><i class="fas fa-gamepad"></i></div>
+                                    <div class="timeline-details">
+                                        <h3 class="timeline-title">Registration & Morning Games</h3>
+                                        <p>Check-in and casual gaming</p>
+                                        <div class="timeline-info">
+                                            <span class="timeline-location"><i class="fas fa-map-marker-alt"></i> Game Zone</span>
+                                            <span class="timeline-duration">1 hour</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="timeline-item">
+                                <div class="timeline-time">11:00 AM</div>
+                                <div class="timeline-content">
+                                    <div class="timeline-dot"><i class="fa fa-trophy"></i></div>
+                                    <div class="timeline-details">
+                                        <h3 class="timeline-title">Esports Tournament</h3>
+                                        <p>Competitive gaming tournament begins</p>
+                                        <div class="timeline-info">
+                                            <span class="timeline-location"><i class="fas fa-map-marker-alt"></i> Main Stage</span>
+                                            <span class="timeline-duration">2 hours</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="timeline-item">
+                                <div class="timeline-time">01:00 PM</div>
+                                <div class="timeline-content">
+                                    <div class="timeline-dot"><i class="fas fa-utensils"></i></div>
+                                    <div class="timeline-details">
+                                        <h3 class="timeline-title">Lunch Break</h3>
+                                        <p>Food and refreshments</p>
+                                        <div class="timeline-info">
+                                            <span class="timeline-location"><i class="fas fa-utensils"></i> Dining Area</span>
+                                            <span class="timeline-duration">1 hour</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="timeline-item">
+                                <div class="timeline-time">02:00 PM</div>
+                                <div class="timeline-content">
+                                    <div class="timeline-dot"><i class="fas fa-vr-cardboard"></i></div>
+                                    <div class="timeline-details">
+                                        <h3 class="timeline-title">VR Gaming & Tech Demos</h3>
+                                        <p>Experience the latest in VR technology</p>
+                                        <div class="timeline-info">
+                                            <span class="timeline-location"><i class="fas fa-map-marker-alt"></i> VR Zone</span>
+                                            <span class="timeline-duration">1.5 hours</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="timeline-item">
+                                <div class="timeline-time">03:30 PM</div>
+                                <div class="timeline-content">
+                                    <div class="timeline-dot"><i class="fas fa-trophy"></i></div>
+                                    <div class="timeline-details">
+                                        <h3 class="timeline-title">Awards & Closing</h3>
+                                        <p>Final announcements and prize distribution</p>
+                                        <div class="timeline-info">
+                                            <span class="timeline-location"><i class="fas fa-map-marker-alt"></i> Main Stage</span>
+                                            <span class="timeline-duration">30 minutes</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="timeline-item">
+                                <div class="timeline-time">04:00 PM</div>
+                                <div class="timeline-content">
+                                    <div class="timeline-dot"><i class="fas fa-handshake"></i></div>
+                                    <div class="timeline-details">
+                                        <h3 class="timeline-title">Networking & Goodbyes</h3>
+                                        <p>Connect with fellow participants before we wrap up</p>
+                                        <div class="timeline-info">
+                                            <span class="timeline-location"><i class="fas fa-map-marker-alt"></i> Main Hall</span>
+                                            <span class="timeline-duration">1 hour</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
+        </section>
 
-            <div class="timeline">
-                <!-- Schedule items will be populated by JavaScript -->
+        <section class="speakers" id="speakers">
+            <h2>Keynote Speakers</h2>
+            <p>Meet our distinguished speakers who will be sharing their insights and expertise at Tech Ignite 2025.</p>
+            
+            <div class="speakers-grid">
+                <div class="speaker-card">
+                    <div class="speaker-image">
+                        <img src="images/speaker1.jpg" alt="Speaker 1">
+                    </div>
+                    <h3>Fatima Usman Hassan</h3>
+                    <p class="speaker-title">Senior Developer Advocate</p>
+                    <p class="speaker-company">Google</p>
+                    <div class="speaker-social">
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                        <a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                    </div>
+                </div>
+
+                <div class="speaker-card">
+                    <div class="speaker-image">
+                        <img src="images/speaker2.jpg" alt="Speaker 2">
+                    </div>
+                    <h3>Chinedu Okafor</h3>
+                    <p class="speaker-title">AI Research Lead</p>
+                    <p class="speaker-company">Data Science Nigeria</p>
+                    <div class="speaker-social">
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                        <a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                    </div>
+                </div>
+
+                <div class="speaker-card">
+                    <div class="speaker-image">
+                        <img src="images/speaker3.jpg" alt="Speaker 3">
+                    </div>
+                    <h3>Amina Mohammed</h3>
+                    <p class="speaker-title">Cloud Solutions Architect</p>
+                    <p class="speaker-company">Andela Nigeria</p>
+                    <div class="speaker-social">
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                        <a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                    </div>
+                </div>
             </div>
-
-            <button class="view-schedule">View Full Schedule</button>
         </section>
         
-        <section class="topics" id="workshops">
-            <h2>We Have Prepared a Wide Range of Topics for You</h2>
-            <div class="topic-grid">
-                <div class="topic-card">
-                    <h3>Mobile Development</h3>
-                    <img src="images/lightening.svg" alt="Lightening Icon" class="icon">
+        <section class="topics-section" id="workshops">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-subtitle">Explore Our Tracks</span>
+                    <h2 class="section-title">Dive Into Cutting-edge Technologies</h2>
+                    <p class="section-description">Hands-on workshops and sessions designed to ignite your passion for technology</p>
                 </div>
-                <div class="topic-card">
-                    <h3>Cloud Computing</h3>
-                    <img src="images/lightening.svg" alt="Lightening Icon" class="icon">
+                
+                <div class="topics-grid">
+                    <div class="topic-card" style="--card-accent: #4285F4">
+                        <div class="card-icon">
+                            <i class="fas fa-mobile-alt"></i>
+                        </div>
+                        <h3>Mobile Development</h3>
+                        <p>Build cross-platform apps with Flutter and React Native</p>
+                        <span class="topic-tag">Beginner Friendly</span>
+                    </div>
+                    
+                    <div class="topic-card" style="--card-accent: #34A853">
+                        <div class="card-icon">
+                            <i class="fas fa-cloud"></i>
+                        </div>
+                        <h3>Cloud Computing</h3>
+                        <p>Master cloud infrastructure with Google Cloud Platform</p>
+                        <span class="topic-tag">Intermediate</span>
+                    </div>
+                    
+                    <div class="topic-card" style="--card-accent: #EA4335">
+                        <div class="card-icon">
+                            <i class="fas fa-link"></i>
+                        </div>
+                        <h3>Blockchain</h3>
+                        <p>Explore decentralized applications and smart contracts</p>
+                        <span class="topic-tag">Advanced</span>
+                    </div>
+                    
+                    <div class="topic-card" style="--card-accent: #FBBC05">
+                        <div class="card-icon">
+                            <i class="fas fa-robot"></i>
+                        </div>
+                        <h3>AI & ML</h3>
+                        <p>Dive into machine learning and artificial intelligence</p>
+                        <span class="topic-tag">All Levels</span>
+                    </div>
+                    
+                    <div class="topic-card" style="--card-accent: #8A2BE2">
+                        <div class="card-icon">
+                            <i class="fas fa-laptop-code"></i>
+                        </div>
+                        <h3>Web Development</h3>
+                        <p>Modern web apps with React, Next.js, and more</p>
+                        <span class="topic-tag">Beginner Friendly</span>
+                    </div>
+                    
+                    <div class="topic-card" style="--card-accent: #FF6B6B">
+                        <div class="card-icon">
+                            <i class="fas fa-paint-brush"></i>
+                        </div>
+                        <h3>UI/UX Design</h3>
+                        <p>Design thinking and creating beautiful interfaces</p>
+                        <span class="topic-tag">All Levels</span>
+                    </div>
                 </div>
-                <div class="topic-card">
-                    <h3>Blockchain</h3>
-                    <img src="images/lightening.svg" alt="Lightening Icon" class="icon">
-                </div>
-                <div class="topic-card">
-                    <h3>AI and ML</h3>
-                    <img src="images/lightening.svg" alt="Lightening Icon" class="icon">
-                </div>
-                <div class="topic-card">
-                    <h3>Mobile Development</h3>
-                    <img src="images/lightening.svg" alt="Lightening Icon" class="icon">
-                </div>
-                <div class="topic-card">
-                    <h3>Web Development</h3>
-                    <img src="images/lightening.svg" alt="Lightening Icon" class="icon">
-                </div>
-                <div class="topic-card">
-                    <h3>UI/UX Design</h3>
-                    <img src="images/lightening.svg" alt="Lightening Icon" class="icon">
-                </div>
-                <div class="topic-card">
-                    <h3>Data Science</h3>
-                    <img src="images/lightening.svg" alt="Lightening Icon" class="icon">
-                </div>
-                <div class="topic-card">
-                    <h3>DevOps</h3>
-                    <img src="images/lightening.svg" alt="Lightening Icon" class="icon">
+                
+                <div class="cta-container">
+                    <a href="#register" class="cta-button">
+                        Register for Workshops
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
                 </div>
             </div>
         </section>
