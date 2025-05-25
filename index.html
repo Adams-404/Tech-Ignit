@@ -98,7 +98,11 @@
                 <p class="section-subtitle">A three-day technology extravaganza packed with innovation, learning, and community building. Here's what each day has in store:</p>
                 
                 <div class="schedule-tabs">
-                    <button class="tab-btn active" data-day="day1">
+                    <button class="tab-btn active" data-day="day">
+                        <span class="short-text">Speakers</span>
+                        <span class="long-text">Speakers</span>
+                    </button>
+                    <button class="tab-btn" data-day="day1">
                         <span class="short-text">Day 1</span>
                         <span class="long-text">Day 1: Hackathon</span>
                     </button>
@@ -113,8 +117,73 @@
                 </div>
                 
                 <div class="schedule-content">
+                    <!-- Day: Keynotes -->
+                    <div class="schedule-day active" id="day">
+                        <div class="timeline">
+                            <div class="timeline-item highlight">
+                                <div class="timeline-time">10:00 AM</div>
+                                <div class="timeline-content">
+                                    <div class="timeline-dot"><i class="fas fa-microphone"></i></div>
+                                    <div class="timeline-details">
+                                        <h3 class="timeline-title">AI Ethics and Its Impact on Society</h3>
+                                        <p>Exploring the ethical implications of AI and how it shapes our future.</p>
+                                        <div class="timeline-info">
+                                            <span class="timeline-location"><i class="fas fa-map-marker-alt"></i> NMH</span>
+                                            <span class="timeline-duration">1 hour</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="timeline-item highlight">
+                                <div class="timeline-time">11:30 AM</div>
+                                <div class="timeline-content">
+                                    <div class="timeline-dot"><i class="fas fa-link"></i></div>
+                                    <div class="timeline-details">
+                                        <h3 class="timeline-title">Blockchain Revolution in African Economies</h3>
+                                        <p>Discover how blockchain technology is transforming financial systems across Africa.</p>
+                                        <div class="timeline-info">
+                                            <span class="timeline-location"><i class="fas fa-map-marker-alt"></i> NMH</span>
+                                            <span class="timeline-duration">1 hour</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="timeline-item">
+                                <div class="timeline-time">12:30 PM</div>
+                                <div class="timeline-content">
+                                    <div class="timeline-dot"><i class="fas fa-utensils"></i></div>
+                                    <div class="timeline-details">
+                                        <h3 class="timeline-title">Lunch Break & Networking</h3>
+                                        <p>Connect with speakers and fellow attendees</p>
+                                        <div class="timeline-info">
+                                            <span class="timeline-location"><i class="fas fa-utensils"></i> NMH</span>
+                                            <span class="timeline-duration">1 hour</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="timeline-item highlight">
+                                <div class="timeline-time">01:30 PM</div>
+                                <div class="timeline-content">
+                                    <div class="timeline-dot"><i class="fas fa-laptop-code"></i></div>
+                                    <div class="timeline-details">
+                                        <h3 class="timeline-title">Future of Web Development</h3>
+                                        <p>Exploring the latest trends and technologies in web development</p>
+                                        <div class="timeline-info">
+                                            <span class="timeline-location"><i class="fas fa-map-marker-alt"></i> NMH</span>
+                                            <span class="timeline-duration">1.5 hours</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
                     <!-- Day 1: Hackathon -->
-                    <div class="schedule-day active" id="day1">
+                    <div class="schedule-day" id="day1">
                         <div class="timeline">
                             <div class="timeline-item">
                                 <div class="timeline-time">09:00 AM</div>
@@ -124,7 +193,7 @@
                                         <h3 class="timeline-title">Registration & Breakfast</h3>
                                         <p>Check-in and networking</p>
                                         <div class="timeline-info">
-                                            <span class="timeline-location"><i class="fas fa-map-marker-alt"></i> Main Lobby</span>
+                                            <span class="timeline-location"><i class="fas fa-map-marker-alt"></i> NMH</span>
                                             <span class="timeline-duration">1 hour</span>
                                         </div>
                                     </div>
@@ -139,7 +208,7 @@
                                         <h3 class="timeline-title">Opening & Theme Reveal</h3>
                                         <p>Kickoff the hackathon with key announcements</p>
                                         <div class="timeline-info">
-                                            <span class="timeline-location"><i class="fas fa-map-marker-alt"></i> Main Stage</span>
+                                            <span class="timeline-location"><i class="fas fa-map-marker-alt"></i> NMH</span>
                                             <span class="timeline-duration">1 hour</span>
                                         </div>
                                     </div>
@@ -154,7 +223,7 @@
                                         <h3 class="timeline-title">Coding Marathon Begins</h3>
                                         <p>Focused on AI, education, and breakthrough ideas</p>
                                         <div class="timeline-info">
-                                            <span class="timeline-location"><i class="fas fa-map-marker-alt"></i> Hackathon Hall</span>
+                                            <span class="timeline-location"><i class="fas fa-map-marker-alt"></i> NMH</span>
                                             <span class="timeline-duration">3 hours</span>
                                         </div>
                                     </div>
@@ -169,7 +238,7 @@
                                         <h3 class="timeline-title">Lunch Break</h3>
                                         <p>Networking and team bonding</p>
                                         <div class="timeline-info">
-                                            <span class="timeline-location"><i class="fas fa-utensils"></i> Dining Area</span>
+                                            <span class="timeline-location"><i class="fas fa-utensils"></i> NMH</span>
                                             <span class="timeline-duration">1 hour</span>
                                         </div>
                                     </div>
@@ -184,7 +253,7 @@
                                         <h3 class="timeline-title">Team Challenges</h3>
                                         <p>Tackling real-world problems in AI, education, and beyond</p>
                                         <div class="timeline-info">
-                                            <span class="timeline-location"><i class="fas fa-map-marker-alt"></i> Hackathon Hall</span>
+                                            <span class="timeline-location"><i class="fas fa-map-marker-alt"></i> NMH</span>
                                             <span class="timeline-duration">2 hours</span>
                                         </div>
                                     </div>
@@ -199,7 +268,7 @@
                                         <h3 class="timeline-title">"Build with AI" Mentorship</h3>
                                         <p>Guidance from industry experts</p>
                                         <div class="timeline-info">
-                                            <span class="timeline-location"><i class="fas fa-map-marker-alt"></i> Workshop Room A</span>
+                                            <span class="timeline-location"><i class="fas fa-map-marker-alt"></i> NMH</span>
                                             <span class="timeline-duration">1.5 hours</span>
                                         </div>
                                     </div>
@@ -214,7 +283,7 @@
                                         <h3 class="timeline-title">Day 1 Wrap-up</h3>
                                         <p>Team check-ins and progress sharing</p>
                                         <div class="timeline-info">
-                                            <span class="timeline-location"><i class="fas fa-map-marker-alt"></i> Main Stage</span>
+                                            <span class="timeline-location"><i class="fas fa-map-marker-alt"></i> NMH</span>
                                             <span class="timeline-duration">1 hour</span>
                                         </div>
                                     </div>
@@ -249,7 +318,7 @@
                                         <h3 class="timeline-title">Opening Keynote</h3>
                                         <p>Future of AI and Technology in Education</p>
                                         <div class="timeline-info">
-                                            <span class="timeline-location"><i class="fas fa-map-marker-alt"></i> Main Hall</span>
+                                            <span class="timeline-location"><i class="fas fa-map-marker-alt"></i> NMH</span>
                                             <span class="timeline-duration">1 hour</span>
                                         </div>
                                     </div>
@@ -264,7 +333,7 @@
                                         <h3 class="timeline-title">Interactive AI Workshop</h3>
                                         <p>Hands-on experience with cutting-edge AI</p>
                                         <div class="timeline-info">
-                                            <span class="timeline-location"><i class="fas fa-map-marker-alt"></i> Workshop Room A</span>
+                                            <span class="timeline-location"><i class="fas fa-map-marker-alt"></i> NMH</span>
                                             <span class="timeline-duration">1.5 hours</span>
                                         </div>
                                     </div>
@@ -279,7 +348,7 @@
                                         <h3 class="timeline-title">Networking Lunch</h3>
                                         <p>Connect with speakers and participants</p>
                                         <div class="timeline-info">
-                                            <span class="timeline-location"><i class="fas fa-utensils"></i> Dining Area</span>
+                                            <span class="timeline-location"><i class="fas fa-utensils"></i> NMH</span>
                                             <span class="timeline-duration">1 hour</span>
                                         </div>
                                     </div>
@@ -294,7 +363,7 @@
                                         <h3 class="timeline-title">Student Showcases</h3>
                                         <p>Finalist presentations and demonstrations</p>
                                         <div class="timeline-info">
-                                            <span class="timeline-location"><i class="fas fa-map-marker-alt"></i> Main Stage</span>
+                                            <span class="timeline-location"><i class="fas fa-map-marker-alt"></i> NMH</span>
                                             <span class="timeline-duration">2 hours</span>
                                         </div>
                                     </div>
@@ -309,7 +378,7 @@
                                         <h3 class="timeline-title">Award Ceremony</h3>
                                         <p>Celebrating achievements and innovations</p>
                                         <div class="timeline-info">
-                                            <span class="timeline-location"><i class="fas fa-map-marker-alt"></i> Main Stage</span>
+                                            <span class="timeline-location"><i class="fas fa-map-marker-alt"></i> NMH</span>
                                             <span class="timeline-duration">45 mins</span>
                                         </div>
                                     </div>
@@ -324,7 +393,7 @@
                                         <h3 class="timeline-title">Tech Academy Pathway 1</h3>
                                         <p>Grand closing ceremony</p>
                                         <div class="timeline-info">
-                                            <span class="timeline-location"><i class="fas fa-map-marker-alt"></i> Main Hall</span>
+                                            <span class="timeline-location"><i class="fas fa-map-marker-alt"></i> NMH</span>
                                             <span class="timeline-duration">1 hour</span>
                                         </div>
                                     </div>
@@ -344,7 +413,7 @@
                                         <h3 class="timeline-title">Morning Registration</h3>
                                         <p>Check-in and welcome refreshments</p>
                                         <div class="timeline-info">
-                                            <span class="timeline-location"><i class="fas fa-map-marker-alt"></i> Main Lobby</span>
+                                            <span class="timeline-location"><i class="fas fa-map-marker-alt"></i> NMH</span>
                                             <span class="timeline-duration">30 mins</span>
                                         </div>
                                     </div>
@@ -374,7 +443,7 @@
                                         <h3 class="timeline-title">Community Lunch</h3>
                                         <p>Casual networking over food</p>
                                         <div class="timeline-info">
-                                            <span class="timeline-location"><i class="fas fa-utensils"></i> Outdoor Terrace</span>
+                                            <span class="timeline-location"><i class="fas fa-utensils"></i> NMH</span>
                                             <span class="timeline-duration">1 hour</span>
                                         </div>
                                     </div>
@@ -419,7 +488,7 @@
                                         <h3 class="timeline-title">Community Building & Closing</h3>
                                         <p>Strengthening connections through shared experiences</p>
                                         <div class="timeline-info">
-                                            <span class="timeline-location"><i class="fas fa-map-marker-alt"></i> Main Hall</span>
+                                            <span class="timeline-location"><i class="fas fa-map-marker-alt"></i> NMH</span>
                                             <span class="timeline-duration">1 hour</span>
                                         </div>
                                     </div>
@@ -427,6 +496,8 @@
                             </div>
                         </div>
                     </div>
+                    
+
                 </div>
             </div>
         </section>
