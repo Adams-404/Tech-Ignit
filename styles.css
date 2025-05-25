@@ -731,8 +731,8 @@ main {
 
 .tab-btn {
     background: transparent;
-    border: 2px solid rgba(0, 0, 0, 0.2);
-    color: #333;
+    border: 2px solid #000;
+    color: #000;
     padding: 0.8rem 2.5rem;
     border-radius: 50px;
     font-size: 1rem;
@@ -770,7 +770,7 @@ main {
 
 .tab-btn.active {
     background: var(--primary);
-    border-color: var(--primary);
+    border-color: #000;
     color: #000;
     font-weight: 700;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
@@ -1046,8 +1046,31 @@ main {
 /* Speakers Section */
 .speakers {
     padding: 5rem 2rem;
-    background: #0f0f0f;
+    background: #000000;
     text-align: center;
+    position: relative;
+    z-index: 1;
+}
+
+.speakers::after {
+    content: '';
+    position: absolute;
+    bottom: -200px;
+    left: 0;
+    right: 0;
+    height: 250px;
+    background: linear-gradient(to bottom, 
+        rgba(0, 0, 0, 1) 0%, 
+        rgba(0, 0, 0, 0.95) 25%,
+        rgba(0, 0, 0, 0.85) 50%,
+        rgba(0, 0, 0, 0.7) 75%,
+        rgba(0, 0, 0, 0.5) 90%,
+        rgba(0, 0, 0, 0) 100%);
+    z-index: 2;
+    pointer-events: none;
+    filter: blur(15px);
+    transform: scaleX(1.2);
+    opacity: 0.9;
 }
 
 .speakers h2 {
@@ -1316,10 +1339,12 @@ main {
 /* Modern Topics Section */
 .topics-section {
     padding: 6rem 1rem;
-    background: linear-gradient(rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.85)),
+    background: linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.9)),
                 url('images/GDG-Bevy-ChapterBanner.webp') center/cover;
     position: relative;
     overflow: hidden;
+    margin-top: -180px;
+    padding-top: 230px;
 }
 
 .topics-section .container {
