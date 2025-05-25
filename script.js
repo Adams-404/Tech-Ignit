@@ -116,53 +116,57 @@
             const tabBtns = document.querySelectorAll('.tab-btn');
             const scheduleDays = document.querySelectorAll('.schedule-day');
 
+            // Hide all schedule days by default
+            scheduleDays.forEach(day => {
+                day.style.display = 'none';
+            });
+
+            // Function to switch tabs
+            function switchTab(btn) {
+                const targetDay = btn.getAttribute('data-day');
+                
+                // Remove active class from all buttons
+                tabBtns.forEach(b => b.classList.remove('active'));
+                
+                // Hide all schedule days
+                scheduleDays.forEach(day => {
+                    day.style.display = 'none';
+                    day.classList.remove('active');
+                });
+                
+                // Add active class to clicked button
+                btn.classList.add('active');
+                
+                // Show corresponding day content
+                const dayToShow = document.getElementById(targetDay);
+                if (dayToShow) {
+                    dayToShow.style.display = 'block';
+                    dayToShow.classList.add('active');
+                }
+                
+                // Scroll to schedule section
+                document.getElementById('schedule').scrollIntoView({ behavior: 'smooth' });
+            }
+
+
+            // Add click event listeners to all tab buttons
             tabBtns.forEach(btn => {
-                btn.addEventListener('click', () => {
-                    // Remove active class from all buttons and days
-                    tabBtns.forEach(b => b.classList.remove('active'));
-                    scheduleDays.forEach(day => day.classList.remove('active'));
-                    
-                    // Add active class to clicked button
-                    btn.classList.add('active');
-                    
-                    // Show corresponding day content
-                    const dayToShow = document.getElementById(btn.dataset.day);
-                    if (dayToShow) {
-                        dayToShow.classList.add('active');
-                    }
+                btn.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    switchTab(btn);
                 });
             });
 
-            // Initialize first tab as active
-            if (tabBtns.length > 0) {
-                tabBtns[0].click();
+            // Initialize the Day 1 tab by default
+            const day1Tab = document.querySelector('.tab-btn[data-day="day1"]');
+            if (day1Tab) {
+                day1Tab.click(); // Trigger click to show Day 1 content
+            } else if (tabBtns.length > 0) {
+                tabBtns[0].click(); // Fallback to first tab
             }
         });
 
-        // Sample schedule data
-        const scheduleData = [
-            {
-                time: '9:00 AM - 10:00 AM',
-                room: 'Keynote Speeches',
-                speaker: 'Dr.....',
-                title: 'AI Ethics and Its Impact on Society',
-                description: 'Exploring the ethical implications of AI and how it shapes our future.'
-            },
-            {
-                time: '10:15 AM - 11:15 AM',
-                room: 'Keynote Speeches',
-                speaker: 'Prof....',
-                title: 'Blockchain Revolution in African Economies',
-                description: 'Discover how blockchain technology is transforming financial systems across Africa.'
-            },
-            {
-                time: '11:30 AM - 12:30 PM',
-                room: 'Lunch Break',
-                speaker: 'Lunch Break & Networking',
-                title: 'Connect with people around',
-                description: ''
-            },
-        ];
+        // Sample schedule data - Removed as per request
 // JavaScript for the About button functionality
         document.addEventListener('DOMContentLoaded', function() {
             const aboutButton = document.getElementById('aboutButton');
