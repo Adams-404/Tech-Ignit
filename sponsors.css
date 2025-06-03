@@ -1210,76 +1210,218 @@ section h2:after {
     display: inline-block;
 }
 
-/* Tier Cards */
+/* New Card Styles */
 .tier-card {
-    background: var(--card-bg);
-    border-radius: 16px;
+    overflow: visible;
+    width: 100%;
+    max-width: 350px;
+    height: 400px;
+    perspective: 1000px;
+    margin: 0 auto;
+}
+
+.tier-card .content {
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+    transition: transform 0.6s;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.3);
+    border-radius: 10px;
+}
+
+.tier-card .front,
+.tier-card .back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    border-radius: 10px;
     overflow: hidden;
-    box-shadow: var(--shadow-md);
-    transition: var(--transition);
+    background: #151515;
+    padding: 2rem;
+    box-sizing: border-box;
+}
+
+.tier-card .back {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: rotateY(180deg);
+}
+
+.tier-card .back::before {
+    content: '';
+    position: absolute;
+    width: 200%;
+    height: 200%;
+    animation: rotation_481 15s infinite linear;
+    z-index: 1;
+}
+
+.tier-card .back-content {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background-color: #151515;
+    border-radius: 5px;
+    color: white;
     display: flex;
     flex-direction: column;
-    position: relative;
-    border: 1px solid rgba(255, 255, 255, 0.05);
-}
-
-.tier-card {
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
     padding: 2rem;
+    z-index: 2;
+    text-align: center;
 }
 
-.tier-card.platinum {
-    border-color: #e5e4e2;
+.tier-card .back-content svg {
+    width: 50px;
+    height: 50px;
+    margin-bottom: 1rem;
 }
 
-.tier-card.gold {
-    border-color: #ffd700;
+.tier-card .back-content strong {
+    font-size: 1.5rem;
+    color: white;
 }
 
-.tier-card.silver {
-    border-color: #c0c0c0;
+.tier-card .front {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
-.tier-card.bronze {
-    border-color: #cd7f32;
-}
-
-.tier-card h3 {
-    color: var(--primary);
+.tier-card .tier-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
     margin-bottom: 1.5rem;
-    font-size: 1.8rem;
-    font-family: var(--font-heading);
 }
 
-.tier-card .price {
+.tier-card .tier-badge {
+    background-color: rgba(0, 0, 0, 0.3);
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.tier-card .tier-price {
     font-size: 2.5rem;
     font-weight: 700;
-    color: var(--primary);
     margin: 1.5rem 0;
+    text-align: center;
 }
 
-.tier-card ul {
-    text-align: left;
-    margin: 2rem 0;
+.tier-card .tier-features {
+    flex-grow: 1;
+    margin: 0;
     padding: 0;
     list-style: none;
 }
 
-.tier-card ul li {
+.tier-card .tier-features li {
     padding: 0.8rem 0;
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-    color: var(--text);
+    color: var(--text-muted);
+    font-size: 0.95rem;
     display: flex;
     align-items: center;
     gap: 0.8rem;
 }
 
-.tier-card ul li:last-child {
+.tier-card .tier-features li:last-child {
     border-bottom: none;
 }
 
-.tier-card ul li i {
+.tier-card .tier-features li::before {
+    content: '✓';
     color: var(--primary);
-    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.tier-card .tier-cta {
+    margin-top: 2rem;
+    text-align: center;
+}
+
+/* Tier-specific colors */
+.tier-card.platinum .back::before {
+    background: linear-gradient(90deg, transparent, #e5e4e2, #c0c0c0, #e5e4e2, transparent);
+}
+
+.tier-card.gold .back::before {
+    background: linear-gradient(90deg, transparent, #ffd700, #daa520, #ffd700, transparent);
+}
+
+.tier-card.silver .back::before {
+    background: linear-gradient(90deg, transparent, #c0c0c0, #a9a9a9, #c0c0c0, transparent);
+}
+
+.tier-card.bronze .back::before {
+    background: linear-gradient(90deg, transparent, #cd7f32, #8b4513, #cd7f32, transparent);
+}
+
+.tier-card.platinum .tier-badge {
+    color: #e5e4e2;
+    border: 1px solid #e5e4e2;
+}
+
+.tier-card.gold .tier-badge {
+    color: #ffd700;
+    border: 1px solid #ffd700;
+}
+
+.tier-card.silver .tier-badge {
+    color: #c0c0c0;
+    border: 1px solid #c0c0c0;
+}
+
+.tier-card.bronze .tier-badge {
+    color: #cd7f32;
+    border: 1px solid #cd7f32;
+}
+
+.tier-card .tier-price {
+    color: white;
+}
+
+.tier-card .tier-cta .cta-button {
+    background: transparent;
+    border: 1px solid white;
+    color: white;
+    padding: 0.8rem 2rem;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+}
+
+.tier-card .tier-cta .cta-button:hover {
+    background: white;
+    color: #151515;
+}
+
+/* Animation */
+@keyframes rotation_481 {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/* Hover effect */
+.tier-card:hover .content {
+    transform: rotateY(180deg);
 }
 
 /* Responsive Design */
