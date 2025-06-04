@@ -9,114 +9,75 @@
     
     <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="images/footer-logo.svg">
-    <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
-    <link rel="manifest" href="site.webmanifest">
     
-    <!-- Preload Critical Resources -->
-    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
-    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-    <link rel="preload" href="sponsors.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-    
-    <!-- Preconnect to required origins -->
+    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
-    
-    <!-- Fallback Fonts -->
-    <noscript>
-        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
-    </noscript>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     
     <!-- CSS -->
-    <link rel="stylesheet" href="styles.css" media="print" onload="this.media='all'">
-    <link rel="stylesheet" href="sponsors.css" media="print" onload="this.media='all'">
-    
-    <!-- Preload Hero Image -->
-    <link rel="preload" as="image" href="images/Group.jpg" media="(min-width: 768px)">
-    
-    <!-- No-JS Fallback -->
-    <noscript>
-        <style>
-            .no-js .js-required { display: none; }
-            [data-animate] { opacity: 1 !important; transform: none !important; }
-        </style>
-    </noscript>
+    <link rel="stylesheet" href="sponsors.css">
     
     <script>
-        // Remove no-js class if JavaScript is enabled
         document.documentElement.classList.remove('no-js');
         document.documentElement.classList.add('js');
-        
-        // Load CSS asynchronously
-        function loadCSS(href, before, media) {
-            'use strict';
-            var ss = window.document.createElement('link');
-            var ref = before || window.document.getElementsByTagName('script')[0];
-            ss.rel = 'stylesheet';
-            ss.href = href;
-            ss.media = 'only x';
-            ref.parentNode.insertBefore(ss, ref);
-            setTimeout(function() {
-                ss.media = media || 'all';
-            });
-            return ss;
-        }
     </script>
 </head>
 <body>
-    <nav>
-        <div class="nav-brand">
-            <img src="images/logo_dark_MvY7VhA.svg" alt="Tech Ignit Logo" class="logo">
-            <span class="location-tag">Gombe</span>
-        </div>
-        
+    <!-- Simple Home Button -->
+    <div class="home-button-container">
         <a href="index.html" class="home-button">
             <i class="fas fa-home"></i>
-            <span>Home</span>
+            <span>Back to Home</span>
         </a>
-
-        <div class="nav-menu">
-            <a href="index.html">Home</a>
-            <a href="index.html#schedule">Schedule</a>
-            <a href="index.html#workshops">Workshops</a>
-            <a href="index.html#sponsors">Sponsors</a>
-            <a href="#" class="active">Become a Sponsor</a>
-            <a href="https://gdg.community.dev/events/details/google-gdg-on-campus-gombe-state-university-gombe-nigeria-presents-tech-ignite/" target="_blank">
-                <button class="cta-button">Get Tickets</button>
-            </a>
-        </div>
-    </nav>
+    </div>
 
     <main class="sponsors-page">
-        <section class="sponsor-hero">
+        <!-- Hero Section -->
+        <section class="hero-section" id="home">
             <div class="hero-particles" id="particles-js"></div>
+            <div class="hero-watermark">
+                <div class="watermark-text">TECH IGNITE 2025</div>
+                <div class="watermark-pattern"></div>
+            </div>
             <div class="container">
                 <div class="hero-content">
-                    <div class="hero-text">
-                        <h1><span class="highlight">Power the Future</span> of Tech at GSU</h1>
-                        <p class="tagline">Join us in shaping the next generation of tech innovators and leaders at Tech Ignite 2025</p>
-                        <div class="hero-stats">
-                            <div class="stat-item">
-                                <span class="stat-number">700+</span>
-                                <span class="stat-label">Attendees</span>
-                            </div>
-                            <div class="stat-item">
-                                <span class="stat-number">3</span>
-                                <span class="stat-label">Action-Packed Days</span>
-                            </div>
-                            <div class="stat-item">
-                                <span class="stat-number">1</span>
-                                <span class="stat-label">Unforgettable Experience</span>
-                            </div>
+                    <h1 class="hero-title">
+                        <span class="highlight">Power the Future</span>
+                        <span class="main-text">of Tech at GSU</span>
+                    </h1>
+                    <p class="hero-subtitle">
+                        Join us in shaping the next generation of tech innovators and leaders at Tech Ignite 2025
+                    </p>
+                    
+                    <div class="hero-stats">
+                        <div class="stat-item" data-animate>
+                            <span class="stat-number">700+</span>
+                            <span class="stat-label">Expected Attendees</span>
                         </div>
-                        <a href="#sponsorship-tiers" class="cta-button pulse">Explore Sponsorship Tiers <i class="fas fa-arrow-down"></i></a>
+                        <div class="stat-item" data-animate>
+                            <span class="stat-number">3</span>
+                            <span class="stat-label">Action-Packed Days</span>
+                        </div>
+                        <div class="stat-item" data-animate>
+                            <span class="stat-number">1</span>
+                            <span class="stat-label">Unforgettable Experience</span>
+                        </div>
                     </div>
-                    <div class="hero-image">
-                        <img src="https://cdn.dribbble.com/users/1355613/screenshots/15833564/media/9a25c8c7c9c7b0d4f2d9a5f8d5f5f5f5.png" alt="Tech Innovation">
+                    
+                    <div class="hero-cta">
+                        <a href="#tiers" class="cta-button primary">
+                            Explore Sponsorship Tiers
+                            <i class="fas fa-arrow-down"></i>
+                        </a>
+                        <a href="mailto:partnerships@gdggsu.org" class="cta-button secondary">
+                            Contact Us
+                        </a>
                     </div>
                 </div>
             </div>
+            
             <div class="scroll-indicator">
                 <span></span>
                 <span></span>
@@ -124,25 +85,53 @@
             </div>
         </section>
 
+        <!-- About Section -->
         <section class="about-section" id="about">
-            <div class="floating-shapes">
-                <div class="shape shape-1"></div>
-                <div class="shape shape-2"></div>
-                <div class="shape shape-3"></div>
+            <div class="section-watermark">
+                <div class="watermark-icon"><i class="fas fa-handshake"></i></div>
             </div>
             <div class="container">
-                <h2>Introduction & Vision</h2>
-                <div class="welcome-box">
-                    <h3>Welcome Invitation</h3>
-                    <p>Partner with GDG Gombe State University for Tech Ignite 2025, and join us in shaping GSU's tech future through impactful collaboration and innovation.</p>
+                <div class="section-header" data-animate>
+                    <h2 class="section-title">Introduction & Vision</h2>
+                    <p class="section-subtitle">
+                        Partner with us to create lasting impact in the tech community
+                    </p>
                 </div>
 
-                <div class="grid-layout">
-                    <div class="card">
+                <div class="welcome-box" data-animate>
+                    <div class="card-watermark">
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <div class="welcome-content">
+                        <div class="welcome-icon">
+                            <i class="fas fa-handshake"></i>
+                        </div>
+                        <div class="welcome-text">
+                            <h3>Welcome to Partnership Excellence</h3>
+                            <p>Partner with GDG Gombe State University for Tech Ignite 2025, and join us in shaping GSU's tech future through impactful collaboration and innovation.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="about-grid">
+                    <div class="about-card" data-animate>
+                        <div class="card-watermark">
+                            <i class="fab fa-google"></i>
+                        </div>
+                        <div class="card-icon">
+                            <i class="fab fa-google"></i>
+                        </div>
                         <h3>About GDG GSU</h3>
                         <p>As the Google Developer Group (GDG) at Gombe State University, we are dedicated to empowering students and fostering a vibrant tech community through hands-on learning and access to cutting-edge technology.</p>
                     </div>
-                    <div class="card">
+                    
+                    <div class="about-card" data-animate>
+                        <div class="card-watermark">
+                            <i class="fas fa-rocket"></i>
+                        </div>
+                        <div class="card-icon">
+                            <i class="fas fa-rocket"></i>
+                        </div>
                         <h3>Event Purpose</h3>
                         <p>Our purpose is to ignite passion & innovation within GSU students, celebrate the culmination of our GDG Tech Academy's first pathway, honor their achievements, and provide them with hands-on experience through Google's cutting-edge AI initiatives.</p>
                     </div>
@@ -150,326 +139,585 @@
             </div>
         </section>
 
-
-        <section class="audience">
+        <!-- Audience Section -->
+        <section class="audience-section" id="audience">
+            <div class="section-watermark">
+                <div class="watermark-icon"><i class="fas fa-users"></i></div>
+            </div>
             <div class="container">
-                <h2>Our Audience: GSU's Brightest</h2>
+                <div class="section-header" data-animate>
+                    <h2 class="section-title">Our Audience: GSU's Brightest</h2>
+                    <p class="section-subtitle">
+                        Connect with passionate, ambitious tech enthusiasts ready to shape the future
+                    </p>
+                </div>
+
                 <div class="audience-grid">
-                    <div class="audience-card">
-                        <i class="fas fa-users"></i>
+                    <div class="audience-card" data-animate>
+                        <div class="card-watermark">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <div class="card-icon">
+                            <i class="fas fa-users"></i>
+                        </div>
                         <h3>700+ Attendees</h3>
                         <p>Motivated GSU students passionate about tech and innovation</p>
+                        <div class="card-stats">
+                            <span class="stat">85% Computer Science</span>
+                            <span class="stat">15% Other Disciplines</span>
+                        </div>
                     </div>
-                    <div class="audience-card">
-                        <i class="fas fa-user-graduate"></i>
+                    
+                    <div class="audience-card" data-animate>
+                        <div class="card-watermark">
+                            <i class="fas fa-user-graduate"></i>
+                        </div>
+                        <div class="card-icon">
+                            <i class="fas fa-user-graduate"></i>
+                        </div>
                         <h3>Diverse Profiles</h3>
                         <p>Aspiring developers, data scientists, UI/UX designers, AI specialists, and future tech entrepreneurs</p>
+                        <div class="card-stats">
+                            <span class="stat">40% Developers</span>
+                            <span class="stat">30% Designers</span>
+                            <span class="stat">30% Data Scientists</span>
+                        </div>
                     </div>
-                    <div class="audience-card">
-                        <i class="fas fa-bullseye"></i>
+                    
+                    <div class="audience-card" data-animate>
+                        <div class="card-watermark">
+                            <i class="fas fa-bullseye"></i>
+                        </div>
+                        <div class="card-icon">
+                            <i class="fas fa-bullseye"></i>
+                        </div>
                         <h3>Ambitious Goals</h3>
                         <p>Seeking skills, opportunities, internships, and industry connections</p>
+                        <div class="card-stats">
+                            <span class="stat">90% Seeking Internships</span>
+                            <span class="stat">75% Job Ready</span>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section class="benefits">
+        <!-- Benefits Section -->
+        <section class="benefits-section" id="benefits">
+            <div class="section-watermark">
+                <div class="watermark-icon"><i class="fas fa-trophy"></i></div>
+            </div>
             <div class="container">
-                <h2>Why Partner with Tech Ignite 2025?</h2>
+                <div class="section-header" data-animate>
+                    <h2 class="section-title">Why Partner with Tech Ignite 2025?</h2>
+                    <p class="section-subtitle">
+                        Discover the unique advantages of sponsoring Nigeria's premier university tech event
+                    </p>
+                </div>
+
                 <div class="benefits-grid">
-                    <div class="benefit-card">
-                        <i class="fas fa-bullhorn"></i>
+                    <div class="benefit-card" data-animate>
+                        <div class="card-watermark">
+                            <i class="fas fa-bullhorn"></i>
+                        </div>
+                        <div class="card-icon">
+                            <i class="fas fa-bullhorn"></i>
+                        </div>
                         <h3>Elevate Brand Visibility</h3>
-                        <p>Reach students, faculty, and the broader GSU community</p>
+                        <p>Reach students, faculty, and the broader GSU community through multiple touchpoints</p>
+                        <ul class="benefit-list">
+                            <li>Social media exposure to 10K+ followers</li>
+                            <li>Event photography and videography</li>
+                            <li>Press coverage and media mentions</li>
+                        </ul>
                     </div>
-                    <div class="benefit-card">
-                        <i class="fas fa-users"></i>
+                    
+                    <div class="benefit-card" data-animate>
+                        <div class="card-watermark">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <div class="card-icon">
+                            <i class="fas fa-users"></i>
+                        </div>
                         <h3>Access Top Tech Talent</h3>
                         <p>Engage promising candidates for internships and recruitment</p>
+                        <ul class="benefit-list">
+                            <li>Direct access to 700+ tech students</li>
+                            <li>Resume collection and talent pipeline</li>
+                            <li>On-site recruitment opportunities</li>
+                        </ul>
                     </div>
-                    <div class="benefit-card">
-                        <i class="fas fa-hands-helping"></i>
+                    
+                    <div class="benefit-card" data-animate>
+                        <div class="card-watermark">
+                            <i class="fas fa-hands-helping"></i>
+                        </div>
+                        <div class="card-icon">
+                            <i class="fas fa-hands-helping"></i>
+                        </div>
                         <h3>Demonstrate CSR</h3>
                         <p>Show commitment to nurturing local tech talent and innovation</p>
+                        <ul class="benefit-list">
+                            <li>Support education and skill development</li>
+                            <li>Contribute to local tech ecosystem</li>
+                            <li>Build positive brand association</li>
+                        </ul>
                     </div>
-                    <div class="benefit-card">
-                        <i class="fas fa-network-wired"></i>
+                    
+                    <div class="benefit-card" data-animate>
+                        <div class="card-watermark">
+                            <i class="fas fa-network-wired"></i>
+                        </div>
+                        <div class="card-icon">
+                            <i class="fas fa-network-wired"></i>
+                        </div>
                         <h3>Showcase & Network</h3>
                         <p>Host demos, deliver tech talks, and build valuable connections</p>
+                        <ul class="benefit-list">
+                            <li>Product demonstrations and showcases</li>
+                            <li>Speaking opportunities and thought leadership</li>
+                            <li>Networking with industry professionals</li>
+                        </ul>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section class="sponsorship-tiers" id="sponsorship-tiers">
+        <!-- Enhanced Sponsorship Tiers Section -->
+        <section class="enhanced-sponsorship-tiers" id="tiers">
+            <!-- Floating Elements -->
+            <div class="floating-elements">
+                <div class="floating-element"></div>
+                <div class="floating-element"></div>
+                <div class="floating-element"></div>
+            </div>
+
+            <div class="section-watermark">
+                <div class="watermark-text">SPONSORSHIP TIERS</div>
+            </div>
+
             <div class="container">
-                <h2>Sponsorship Tiers & Benefits</h2>
+                <!-- Section Header -->
+                <div class="section-header fade-in-up">
+                    <h2 class="section-title">Sponsorship Tiers & Benefits</h2>
+                    <p class="section-subtitle">
+                        Choose the perfect partnership level to maximize your impact and connect with 700+ passionate tech students at GSU
+                    </p>
+                </div>
+
+                <!-- Tiers Grid -->
                 <div class="tiers-grid">
                     <!-- Platinum Tier -->
-                    <div class="tier-card platinum">
-                        <div class="content">
-                            <div class="front">
-                                <div class="tier-header">
-                                    <h3>Platinum Partner</h3>
-                                    <span class="tier-badge">Premium</span>
-                                </div>
-                                <div class="tier-price">₦500,000+</div>
-                                <ul class="tier-features">
-                                    <li>Headline sponsor recognition</li>
-                                    <li>Keynote slot (20-30 mins)</li>
-                                    <li>Prime Exhibition Space</li>
-                                    <li>Hackathon Engagement</li>
-                                    <li>Tech Academy Recognition</li>
-                                    <li>Dedicated Social Media</li>
-                                    <li>Logo on Attendee Swag</li>
-                                    <li>VIP Passes</li>
-                                    <li>Post-Event Report</li>
-                                </ul>
-                                <div class="tier-cta">
-                                    <a href="#contact" class="cta-button">Become a Partner</a>
-                                </div>
-                            </div>
-                            <div class="back">
-                                <div class="back-content">
-                                    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" fill="#e5e4e2"/>
-                                    </svg>
-                                    <strong>Platinum Partner</strong>
-                                    <p>Unlock exclusive benefits and maximize your brand's visibility at Tech Ignite 2025</p>
-                                </div>
-                            </div>
+                    <div class="enhanced-tier-card platinum fade-in-up stagger-1" data-tier="platinum">
+                        <div class="tier-watermark">
+                            <i class="fas fa-crown"></i>
                         </div>
+                        <div class="tier-badge premium">Premium</div>
+                        <div class="card-header">
+                            <div class="tier-icon platinum">
+                                <i class="fas fa-crown"></i>
+                            </div>
+                            <h3 class="tier-title">Platinum Partner</h3>
+                            <div class="tier-price platinum">₦500,000+</div>
+                        </div>
+                        <ul class="tier-features">
+                            <li>Headline sponsor recognition</li>
+                            <li>Keynote slot (20-30 mins)</li>
+                            <li>Prime Exhibition Space</li>
+                            <li>Hackathon Engagement</li>
+                            <li>Tech Academy Recognition</li>
+                            <li>Dedicated Social Media</li>
+                            <li>Logo on Attendee Swag</li>
+                            <li>VIP Passes (5)</li>
+                            <li>Post-Event Report</li>
+                            <li>Custom branding opportunities</li>
+                        </ul>
+                        <a href="mailto:partnerships@gdggsu.org" class="tier-cta platinum">Become a Partner</a>
                     </div>
 
                     <!-- Gold Tier -->
-                    <div class="tier-card gold">
-                        <div class="content">
-                            <div class="front">
-                                <div class="tier-header">
-                                    <h3>Gold Partner</h3>
-                                    <span class="tier-badge">Featured</span>
-                                </div>
-                                <div class="tier-price">₦250K - ₦499K</div>
-                                <ul class="tier-features">
-                                    <li>Prominent Branding</li>
-                                    <li>Workshop or Panelist Slot</li>
-                                    <li>Exhibition Space</li>
-                                    <li>Social Media Mentions</li>
-                                    <li>Logo on Event Materials</li>
-                                    <li>VIP Passes</li>
-                                </ul>
-                                <div class="tier-cta">
-                                    <a href="#contact" class="cta-button">Become a Partner</a>
-                                </div>
-                            </div>
-                            <div class="back">
-                                <div class="back-content">
-                                    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" fill="#ffd700"/>
-                                    </svg>
-                                    <strong>Gold Partner</strong>
-                                    <p>Enhance your brand presence and connect with top tech talent at our event</p>
-                                </div>
-                            </div>
+                    <div class="enhanced-tier-card gold fade-in-up stagger-2" data-tier="gold">
+                        <div class="tier-watermark">
+                            <i class="fas fa-medal"></i>
                         </div>
+                        <div class="tier-badge featured">Featured</div>
+                        <div class="card-header">
+                            <div class="tier-icon gold">
+                                <i class="fas fa-medal"></i>
+                            </div>
+                            <h3 class="tier-title">Gold Partner</h3>
+                            <div class="tier-price gold">₦250K - ₦499K</div>
+                        </div>
+                        <ul class="tier-features">
+                            <li>Prominent Branding</li>
+                            <li>Workshop or Panelist Slot</li>
+                            <li>Exhibition Space</li>
+                            <li>Social Media Mentions</li>
+                            <li>Logo on Event Materials</li>
+                            <li>VIP Passes (3)</li>
+                            <li>Networking opportunities</li>
+                            <li>Brand visibility</li>
+                        </ul>
+                        <a href="mailto:partnerships@gdggsu.org" class="tier-cta gold">Become a Partner</a>
                     </div>
 
                     <!-- Silver Tier -->
-                    <div class="tier-card silver">
-                        <div class="content">
-                            <div class="front">
-                                <div class="tier-header">
-                                    <h3>Silver Partner</h3>
-                                    <span class="tier-badge">Popular</span>
-                                </div>
-                                <div class="tier-price">₦100K - ₦249K</div>
-                                <ul class="tier-features">
-                                    <li>Standard Branding</li>
-                                    <li>Exhibition Space</li>
-                                    <li>Social Media Mentions</li>
-                                    <li>Event Passes</li>
-                                    <li>Networking Opportunities</li>
-                                </ul>
-                                <div class="tier-cta">
-                                    <a href="#contact" class="cta-button">Become a Partner</a>
-                                </div>
+                    <div class="enhanced-tier-card silver fade-in-up stagger-3" data-tier="silver">
+                        <div class="tier-watermark">
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <div class="tier-badge popular">Popular</div>
+                        <div class="card-header">
+                            <div class="tier-icon silver">
+                                <i class="fas fa-star"></i>
                             </div>
-                            <div class="back">
-                                <div class="back-content">
-                                    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" fill="#c0c0c0"/>
-                                    </svg>
-                                    <strong>Silver Partner</strong>
-                                    <p>Gain valuable exposure and connect with our tech community</p>
-                                </div>
+                            <h3 class="tier-title">Silver Partner</h3>
+                            <div class="tier-price silver">₦100K - ₦249K</div>
+                        </div>
+                        <ul class="tier-features">
+                            <li>Standard Branding</li>
+                            <li>Exhibition Space</li>
+                            <li>Social Media Mentions</li>
+                            <li>Event Passes (2)</li>
+                            <li>Networking Opportunities</li>
+                            <li>Brand recognition</li>
+                        </ul>
+                        <a href="mailto:partnerships@gdggsu.org" class="tier-cta silver">Become a Partner</a>
+                    </div>
+
+                    <!-- Community Tier -->
+                    <div class="enhanced-tier-card bronze fade-in-up stagger-4" data-tier="bronze">
+                        <div class="tier-watermark">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <div class="tier-badge starter">Starter</div>
+                        <div class="card-header">
+                            <div class="tier-icon bronze">
+                                <i class="fas fa-users"></i>
+                            </div>
+                            <h3 class="tier-title">Community Partner</h3>
+                            <div class="tier-price bronze">In-Kind or <₦100K</div>
+                        </div>
+                        <ul class="tier-features">
+                            <li>Basic Branding</li>
+                            <li>Social Media Mention</li>
+                            <li>Community Recognition</li>
+                            <li>Networking Access</li>
+                            <li>Event participation</li>
+                        </ul>
+                        <a href="mailto:partnerships@gdggsu.org" class="tier-cta bronze">Join as Partner</a>
+                    </div>
+                </div>
+
+                <!-- Custom Package -->
+                <div class="custom-package fade-in-up">
+                    <div class="package-watermark">
+                        <i class="fas fa-handshake"></i>
+                    </div>
+                    <h3><i class="fas fa-handshake"></i> Need a Custom Package?</h3>
+                    <p>
+                        We'll work with you to create a sponsorship package that aligns perfectly with your CSR goals and marketing objectives. Let's discuss how we can create maximum value for your brand.
+                    </p>
+                    <a href="mailto:partnerships@gdggsu.org" class="custom-cta">Let's Talk Custom</a>
+                </div>
+
+                <!-- Stats Section -->
+                <div class="stats-section">
+                    <div class="stat-item fade-in-up stagger-1">
+                        <span class="stat-number">700+</span>
+                        <span class="stat-label">Expected Attendees</span>
+                    </div>
+                    <div class="stat-item fade-in-up stagger-2">
+                        <span class="stat-number">3</span>
+                        <span class="stat-label">Action-Packed Days</span>
+                    </div>
+                    <div class="stat-item fade-in-up stagger-3">
+                        <span class="stat-number">1</span>
+                        <span class="stat-label">Unforgettable Experience</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Specific Opportunities Section -->
+        <section class="opportunities-section" id="opportunities">
+            <div class="section-watermark">
+                <div class="watermark-icon"><i class="fas fa-lightbulb"></i></div>
+            </div>
+            <div class="container">
+                <div class="section-header" data-animate>
+                    <h2 class="section-title">Specific Sponsorship Opportunities</h2>
+                    <p class="section-subtitle">
+                        Target your sponsorship to align with specific event activities and maximize impact
+                    </p>
+                </div>
+
+                <div class="opportunities-grid">
+                    <div class="opportunity-card" data-animate>
+                        <div class="card-watermark">
+                            <i class="fas fa-robot"></i>
+                        </div>
+                        <div class="opportunity-number">01</div>
+                        <div class="opportunity-icon">
+                            <i class="fas fa-robot"></i>
+                        </div>
+                        <h3>"Build with AI" Champion</h3>
+                        <p>Sponsor workshops & prizes for the AI track and position your brand at the forefront of AI innovation</p>
+                        <div class="opportunity-benefits">
+                            <span class="benefit-tag">AI Workshop Branding</span>
+                            <span class="benefit-tag">Prize Sponsorship</span>
+                            <span class="benefit-tag">Tech Talk Slot</span>
+                        </div>
+                    </div>
+
+                    <div class="opportunity-card" data-animate>
+                        <div class="card-watermark">
+                            <i class="fas fa-trophy"></i>
+                        </div>
+                        <div class="opportunity-number">02</div>
+                        <div class="opportunity-icon">
+                            <i class="fas fa-trophy"></i>
+                        </div>
+                        <h3>Tech Academy Showcase</h3>
+                        <p>Support awards and recognition for top students from our intensive tech training program</p>
+                        <div class="opportunity-benefits">
+                            <span class="benefit-tag">Award Ceremony</span>
+                            <span class="benefit-tag">Student Recognition</span>
+                            <span class="benefit-tag">Talent Pipeline</span>
+                        </div>
+                    </div>
+
+                    <div class="opportunity-card" data-animate>
+                        <div class="card-watermark">
+                            <i class="fas fa-code"></i>
+                        </div>
+                        <div class="opportunity-number">03</div>
+                        <div class="opportunity-icon">
+                            <i class="fas fa-code"></i>
+                        </div>
+                        <h3>Hackathon Theme Sponsor</h3>
+                        <p>Align with specific challenge categories and engage directly with innovative problem-solvers</p>
+                        <div class="opportunity-benefits">
+                            <span class="benefit-tag">Challenge Design</span>
+                            <span class="benefit-tag">Judging Panel</span>
+                            <span class="benefit-tag">Winner Mentorship</span>
+                        </div>
+                    </div>
+
+                    <div class="opportunity-card" data-animate>
+                        <div class="card-watermark">
+                            <i class="fas fa-gamepad"></i>
+                        </div>
+                        <div class="opportunity-number">04</div>
+                        <div class="opportunity-icon">
+                            <i class="fas fa-gamepad"></i>
+                        </div>
+                        <h3>Games Day Sponsor</h3>
+                        <p>Engage through fun tech activities and create memorable brand experiences</p>
+                        <div class="opportunity-benefits">
+                            <span class="benefit-tag">Gaming Stations</span>
+                            <span class="benefit-tag">Interactive Demos</span>
+                            <span class="benefit-tag">Prize Giveaways</span>
+                        </div>
+                    </div>
+
+                    <div class="opportunity-card" data-animate>
+                        <div class="card-watermark">
+                            <i class="fas fa-gift"></i>
+                        </div>
+                        <div class="opportunity-number">05</div>
+                        <div class="opportunity-icon">
+                            <i class="fas fa-gift"></i>
+                        </div>
+                        <h3>Prize Sponsor</h3>
+                        <p>Provide gadgets, software licenses, or internships as competition rewards</p>
+                        <div class="opportunity-benefits">
+                            <span class="benefit-tag">Tech Gadgets</span>
+                            <span class="benefit-tag">Software Licenses</span>
+                            <span class="benefit-tag">Internship Offers</span>
+                        </div>
+                    </div>
+
+                    <div class="opportunity-card" data-animate>
+                        <div class="card-watermark">
+                            <i class="fas fa-shopping-bag"></i>
+                        </div>
+                        <div class="opportunity-number">06</div>
+                        <div class="opportunity-icon">
+                            <i class="fas fa-shopping-bag"></i>
+                        </div>
+                        <h3>Swag Bag Contributor</h3>
+                        <p>Include branded items for attendees and ensure lasting brand recall</p>
+                        <div class="opportunity-benefits">
+                            <span class="benefit-tag">Branded Merchandise</span>
+                            <span class="benefit-tag">700+ Recipients</span>
+                            <span class="benefit-tag">Long-term Exposure</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Testimonials Section -->
+        <section class="testimonials-section" id="testimonials">
+            <div class="section-watermark">
+                <div class="watermark-icon"><i class="fas fa-quote-left"></i></div>
+            </div>
+            <div class="container">
+                <div class="section-header" data-animate>
+                    <h2 class="section-title">What Our Partners Say</h2>
+                    <p class="section-subtitle">
+                        Hear from organizations that have partnered with us in previous events
+                    </p>
+                </div>
+
+                <div class="testimonials-grid">
+                    <div class="testimonial-card" data-animate>
+                        <div class="card-watermark">
+                            <i class="fas fa-quote-left"></i>
+                        </div>
+                        <div class="testimonial-content">
+                            <div class="quote-icon">
+                                <i class="fas fa-quote-left"></i>
+                            </div>
+                            <p>"Partnering with GDG GSU has been incredibly rewarding. The quality of students and their enthusiasm for technology is remarkable. We've recruited several talented interns from their events."</p>
+                        </div>
+                        <div class="testimonial-author">
+                            <div class="author-avatar">
+                                <img src="/placeholder.svg?height=60&width=60" alt="Tech Company CEO">
+                            </div>
+                            <div class="author-info">
+                                <h4>Sarah Johnson</h4>
+                                <span>CEO, TechStart Nigeria</span>
                             </div>
                         </div>
                     </div>
 
-                    <!-- Bronze Tier -->
-                    <div class="tier-card bronze">
-                        <div class="content">
-                            <div class="front">
-                                <div class="tier-header">
-                                    <h3>Community Partner</h3>
-                                    <span class="tier-badge">Starter</span>
-                                </div>
-                                <div class="tier-price">In-Kind or <₦100K</div>
-                                <ul class="tier-features">
-                                    <li>Basic Branding</li>
-                                    <li>Social Media Mention</li>
-                                    <li>Community Recognition</li>
-                                    <li>Networking Access</li>
-                                </ul>
-                                <div class="tier-cta">
-                                    <a href="#contact" class="cta-button">Join as Partner</a>
-                                </div>
+                    <div class="testimonial-card" data-animate>
+                        <div class="card-watermark">
+                            <i class="fas fa-quote-left"></i>
+                        </div>
+                        <div class="testimonial-content">
+                            <div class="quote-icon">
+                                <i class="fas fa-quote-left"></i>
                             </div>
-                            <div class="back">
-                                <div class="back-content">
-                                    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" fill="#cd7f32"/>
-                                    </svg>
-                                    <strong>Community Partner</strong>
-                                    <p>Be part of our tech community and support the next generation of innovators</p>
-                                </div>
+                            <p>"The exposure we gained from sponsoring their tech event was phenomenal. The students are genuinely passionate about learning and innovation. Highly recommend partnering with them."</p>
+                        </div>
+                        <div class="testimonial-author">
+                            <div class="author-avatar">
+                                <img src="/placeholder.svg?height=60&width=60" alt="Innovation Director">
+                            </div>
+                            <div class="author-info">
+                                <h4>Michael Chen</h4>
+                                <span>Innovation Director, Digital Solutions Ltd</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="testimonial-card" data-animate>
+                        <div class="card-watermark">
+                            <i class="fas fa-quote-left"></i>
+                        </div>
+                        <div class="testimonial-content">
+                            <div class="quote-icon">
+                                <i class="fas fa-quote-left"></i>
+                            </div>
+                            <p>"GDG GSU events provide an excellent platform to showcase our products to the next generation of tech professionals. The organization and execution are always top-notch."</p>
+                        </div>
+                        <div class="testimonial-author">
+                            <div class="author-avatar">
+                                <img src="/placeholder.svg?height=60&width=60" alt="Marketing Manager">
+                            </div>
+                            <div class="author-info">
+                                <h4>Aisha Abdullahi</h4>
+                                <span>Marketing Manager, CloudTech Africa</span>
                             </div>
                         </div>
                     </div>
                 </div>
-                <p class="custom-note">Custom packages available to align with your CSR and marketing goals.</p>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section class="faq-section" id="faq">
+            <div class="section-watermark">
+                <div class="watermark-icon"><i class="fas fa-question-circle"></i></div>
+            </div>
+            <div class="container">
+                <div class="section-header" data-animate>
+                    <h2 class="section-title">Frequently Asked Questions</h2>
+                    <p class="section-subtitle">
+                        Get answers to common questions about sponsoring Tech Ignite 2025
+                    </p>
+                </div>
+
+                <div class="faq-container">
+                    <div class="faq-item" data-animate>
+                        <div class="faq-question">
+                            <h3>What is the deadline for sponsorship applications?</h3>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p>We accept sponsorship applications on a rolling basis, but we recommend applying at least 4 weeks before the event to ensure maximum branding opportunities and proper integration into our marketing materials.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item" data-animate>
+                        <div class="faq-question">
+                            <h3>Can we customize our sponsorship package?</h3>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p>We understand that every organization has unique goals and requirements. We're happy to work with you to create a custom sponsorship package that aligns with your objectives and budget.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item" data-animate>
+                        <div class="faq-question">
+                            <h3>What promotional materials do you provide to sponsors?</h3>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Sponsors receive a comprehensive promotional package including high-resolution event photos, social media content, attendee demographics report, and post-event impact analysis. Higher-tier sponsors also receive video highlights and press coverage summaries.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item" data-animate>
+                        <div class="faq-question">
+                            <h3>How do you measure sponsorship ROI?</h3>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p>We provide detailed analytics including social media reach, engagement metrics, lead generation numbers, brand mention tracking, and attendee feedback surveys. We also offer post-event consultation to help you assess the impact of your sponsorship.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item" data-animate>
+                        <div class="faq-question">
+                            <h3>Can international companies sponsor the event?</h3>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Yes! We welcome international sponsors and can accommodate remote participation through virtual presentations, online exhibitions, and digital branding opportunities. We'll work with you to ensure maximum impact regardless of your location.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item" data-animate>
+                        <div class="faq-question">
+                            <h3>What payment methods do you accept?</h3>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p>We accept bank transfers, online payments, and can accommodate international wire transfers. For in-kind sponsorships, we'll work with you to establish the equivalent value and documentation requirements.</p>
+                        </div>
+                    </div>
+                </div>
             </div>
         </section>
     </main>
 
-
-<section class="opportunities" id="contact">
-    <div class="container">
-        <h2>Specific Sponsorship Opportunities</h2>
-        <div class="opportunities-grid">
-            <div class="opportunity-card">
-                <span class="number">1</span>
-                <h3>"Build with AI" Champion</h3>
-                <p>Sponsor workshops & prizes for the AI track</p>
-            </div>
-            <div class="opportunity-card">
-                <span class="number">2</span>
-                <h3>Tech Academy Showcase</h3>
-                <p>Support awards and recognition for top students</p>
-            </div>
-            <div class="opportunity-card">
-                <span class="number">3</span>
-                <h3>Hackathon Theme Sponsor</h3>
-                <p>Align with specific challenge categories</p>
-            </div>
-            <div class="opportunity-card">
-                <span class="number">4</span>
-                <h3>Games Day Sponsor</h3>
-                <p>Engage through fun tech activities</p>
-            </div>
-            <div class="opportunity-card">
-                <span class="number">5</span>
-                <h3>Prize Sponsor</h3>
-                <p>Provide gadgets, software licenses, or internships</p>
-            </div>
-            <div class="opportunity-card">
-                <span class="number">6</span>
-                <h3>Swag Bag Contributor</h3>
-                <p>Include branded items for attendees</p>
-            </div>
-        </div>
-
-
-    </div>
-</section>
-</main>
-
-<footer class="footer">
-    <div class="footer-container">
-        <div class="about-section">
-            <button class="about-button" id="aboutButton">About Tech Ignit 2025</button>
-            <p class="about-text" id="aboutText" style="display: none;">
-                Tech Ignit is an annual conference for tech enthusiasts from novices to industry leaders organized by the Google Developer Group Gombe (GDG Gombe). The event features sessions on various topics, including AI/ML, Mobile Development, Design, Web Development, Cloud Computing, DevOps, Cybersecurity, and more.
-            </p>
-        </div>
-        <div class="footer-grid">
-            <div class="footer-column">
-                <h3>Quick Links</h3>
-                <a href="#schedule">Schedule</a>
-                <a href="#speakers">Events</a>
-                <a href="#faq">FAQs</a>
-                <a href="#generator">DP Generator</a>
-            </div>
-            <div class="footer-column">
-                <h3>Event Info</h3>
-                <a href="https://maps.app.goo.gl/TNme98P8knEo5mbj6" target="_blank" aria-label="Venue Information">Venue Information</a>
-                <a href="#tickets">View Ticket</a>
-                <a href="#trivia">Play Trivia</a>
-                <a href="#community">Join the Community</a>
-            </div>
-            <div class="footer-column">
-                <h3>Follow Us</h3>
-                <div class="social-icons">
-                    <a href="https://x.com/gdgocgsu" aria-label="Twitter" target="_blank">
-                        <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
-                            <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
-                        </svg>
-                    </a>
-                    <a href="https://www.instagram.com/gdgoc_gsu/" aria-label="Instagram" target="_blank">
-                        <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
-                            <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
-                        </svg>
-                    </a>
-                    <a href="https://www.linkedin.com/company/gdsc-gombe-state-university/" aria-label="LinkedIn" target="_blank">
-                        <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
-                            <path d="M4.98 3.5C4.98 4.88 3.88 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1 4.98 2.12 4.98 3.5zM0 8h5V24H0V8zm8 0h4.64v2.164h.064c.647-1.222 2.229-2.514 4.586-2.514 4.907 0 5.713 3.228 5.713 7.426V24H18V15.436c0-2.039-.036-4.666-2.84-4.666-2.852 0-3.288 2.22-3.288 4.512V24h-5V8z"/>
-                        </svg>
-                    </a>
-                </div>
-                <a href="#contact">Contact Us</a>
-                <a href="#privacy">Privacy Policy</a>
-            </div>
-            <div class="footer-column">
-                <h3>Additional Info</h3>
-                <a href="#guidelines">Community Guidelines</a>
-                <a href="#code">Code of Conduct</a>
-            </div>
-        </div>
-        <div class="logo-section">
-            <img src="images/footer-logo.svg" alt="Tech Ignit Logo" class="logo-image">
-            <div class="event-title">Tech Ignit 2025</div>
-        </div>
-    </div>
-</footer>
-
-<!-- Load Particles.js -->
-<script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js" defer></script>
-    
-<!-- Main JavaScript -->
-<script src="sponsors.js" defer></script>
-    
-<!-- Load AOS (Animate On Scroll) if needed -->
-<script src="https://unpkg.com/aos@2.3.1/dist/aos.js" defer></script>
-    
-<!-- Load LazySizes if needed -->
-<script>
-    // Initialize AOS if loaded
-    document.addEventListener('DOMContentLoaded', function() {
-        if (typeof AOS !== 'undefined') {
-            AOS.init({
-                duration: 800,
-                easing: 'ease-in-out',
-                once: true
-            });
-        }
-        
-        // Load non-critical CSS
-        window.addEventListener('load', function() {
-            loadCSS('https://fonts.googleapis.com/icon?family=Material+Icons');
-        });
-    });
-</script>
-<script src="script.js"></script>
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script src="sponsors.js"></script>
 </body>
 </html>
