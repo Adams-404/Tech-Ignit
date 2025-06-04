@@ -38,11 +38,11 @@ if (window.location.pathname.endsWith('index.html') || window.location.pathname.
         
         // Countdown Timer
         function updateCountdown() {
-            // Event dates (June 20-22, 2025)
-            const eventStart = new Date('2025-06-20T10:00:00+01:00');
-            const day2 = new Date('2025-06-21T00:00:00+01:00');
-            const day3 = new Date('2025-06-22T00:00:00+01:00');
-            const eventEnd = new Date('2025-06-22T23:59:59+01:00');
+            // Event dates (July 5th, 7th-8th, 2025)
+            const eventStart = new Date('2025-07-05T10:00:00+01:00');
+            const day2 = new Date('2025-07-07T00:00:00+01:00');
+            const day3 = new Date('2025-07-08T00:00:00+01:00');
+            const eventEnd = new Date('2025-07-08T23:59:59+01:00');
             
             const now = new Date();
             
@@ -65,15 +65,12 @@ if (window.location.pathname.endsWith('index.html') || window.location.pathname.
             const countdownItems = document.querySelectorAll('.countdown-item');
             
             if (localTime >= eventStart && localTime <= eventEnd) {
-                // Event is happening now
-                countdownContainer.innerHTML = '<div class="event-status">🎉 Happening Now - ';
-                
-                if (localTime < day2) {
-                    countdownContainer.innerHTML += 'Day 1: Hackathon 🚀</div>';
-                } else if (localTime < day3) {
-                    countdownContainer.innerHTML += 'Day 2: Conference & Celebrations 🎤</div>';
-                } else {
-                    countdownContainer.innerHTML += 'Day 3: Games & Community 🎮</div>';
+                if (localTime >= eventStart && localTime < day2) {
+                    countdownContainer.innerHTML = '<div class="event-status">🎉 Happening Now - Day 1: Hackathon 🚀</div>';
+                } else if (localTime >= day2 && localTime < day3) {
+                    countdownContainer.innerHTML = '<div class="event-status">🎉 Happening Now - Day 2: Conference & Celebrations 🎤</div>';
+                } else if (localTime >= day3) {
+                    countdownContainer.innerHTML = '<div class="event-status">🎉 Happening Now - Day 3: Games & Community 🎮</div>';
                 }
                 return;
             } else if (localTime > eventEnd) {
