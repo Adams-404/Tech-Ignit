@@ -798,10 +798,11 @@ section {
     border: 2px solid transparent;
     backdrop-filter: blur(20px);
     transition: var(--transition);
-    overflow: hidden;
+    overflow: visible;
     cursor: pointer;
     transform: translateY(0);
     box-shadow: var(--shadow-lg);
+    margin: 1rem; /* Add some margin to prevent badge cutoff */
 }
 
 .enhanced-tier-card::before {
@@ -815,6 +816,7 @@ section {
     opacity: 0;
     transition: var(--transition);
     border-radius: 24px;
+    z-index: 1;
 }
 
 .enhanced-tier-card:hover {
@@ -868,35 +870,158 @@ section {
     margin-bottom: 2rem;
     position: relative;
     z-index: 2;
+    overflow: visible;
 }
 
+/* Ribbon Base Styles */
 .tier-badge {
     position: absolute;
-    top: -1rem;
-    right: -1rem;
-    background: var(--primary);
-    color: #000;
-    padding: 0.5rem 1rem;
-    border-radius: 20px;
-    font-size: 0.75rem;
-    font-weight: 600;
+    top: 15px;
+    right: -15px;
+    padding: 0.6rem 2.5rem;
+    font-size: 0.8rem;
+    font-weight: 700;
     text-transform: uppercase;
+    color: #fff;
+    z-index: 10;
+    text-align: center;
     letter-spacing: 1px;
-    transform: rotate(15deg);
-    box-shadow: 0 4px 15px rgba(255, 193, 7, 0.3);
-    z-index: 3;
+    transform: rotate(45deg);
+    transform-origin: center;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.3);
+    transition: all 0.3s ease;
+    animation: float 3s ease-in-out infinite;
+    min-width: 120px;
+    text-shadow: 0 1px 1px rgba(0,0,0,0.3);
 }
 
+/* Ribbon Pseudo-elements for 3D effect */
+.tier-badge::before,
+.tier-badge::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    border-style: solid;
+    border-width: 15px 10px;
+    z-index: -1;
+}
+
+.tier-badge::before {
+    right: 100%;
+    border-color: transparent;
+}
+
+.tier-badge::after {
+    left: 100%;
+    border-color: transparent;
+}
+
+/* Ribbon Hover Effect */
+.enhanced-tier-card:hover .tier-badge {
+    transform: rotate(45deg) scale(1.1);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.4);
+}
+
+/* Premium Ribbon */
+.tier-badge.premium {
+    background: linear-gradient(135deg, #e5e4e2 0%, #c0c0c0 100%);
+    color: #333;
+    text-shadow: 0 1px 1px rgba(255,255,255,0.8);
+    right: -25px;
+    top: 25px;
+}
+
+.tier-badge.premium::before {
+    border-left-color: #c0c0c0;
+    border-right-color: transparent;
+    border-top-color: #c0c0c0;
+    border-bottom-color: #c0c0c0;
+}
+
+.tier-badge.premium::after {
+    border-right-color: #c0c0c0;
+    border-left-color: transparent;
+    border-top-color: #c0c0c0;
+    border-bottom-color: #c0c0c0;
+}
+
+/* Featured (Gold) Ribbon */
 .tier-badge.featured {
-    background: var(--gold);
+    background: linear-gradient(135deg, #ffd700 0%, #daa520 100%);
+    color: #5e4200;
+    text-shadow: 0 1px 1px rgba(255,255,255,0.5);
+    right: -25px;
+    top: 25px;
 }
 
+.tier-badge.featured::before {
+    border-left-color: #daa520;
+    border-right-color: transparent;
+    border-top-color: #daa520;
+    border-bottom-color: #daa520;
+}
+
+.tier-badge.featured::after {
+    border-right-color: #daa520;
+    border-left-color: transparent;
+    border-top-color: #daa520;
+    border-bottom-color: #daa520;
+}
+
+/* Popular (Silver) Ribbon */
 .tier-badge.popular {
-    background: var(--silver);
+    background: linear-gradient(135deg, #e6e6e6 0%, #c0c0c0 100%);
+    color: #444;
+    text-shadow: 0 1px 1px rgba(255,255,255,0.8);
+    right: -25px;
+    top: 25px;
 }
 
+.tier-badge.popular::before {
+    border-left-color: #c0c0c0;
+    border-right-color: transparent;
+    border-top-color: #c0c0c0;
+    border-bottom-color: #c0c0c0;
+}
+
+.tier-badge.popular::after {
+    border-right-color: #c0c0c0;
+    border-left-color: transparent;
+    border-top-color: #c0c0c0;
+    border-bottom-color: #c0c0c0;
+}
+
+/* Starter (Bronze) Ribbon */
 .tier-badge.starter {
-    background: var(--bronze);
+    background: linear-gradient(135deg, #cd7f32 0%, #8b4513 100%);
+    color: #fff;
+    text-shadow: 0 1px 1px rgba(0,0,0,0.3);
+    right: -25px;
+    top: 25px;
+}
+
+.tier-badge.starter::before {
+    border-left-color: #8b4513;
+    border-right-color: transparent;
+    border-top-color: #8b4513;
+    border-bottom-color: #8b4513;
+}
+
+.tier-badge.starter::after {
+    border-right-color: #8b4513;
+    border-left-color: transparent;
+    border-top-color: #8b4513;
+    border-bottom-color: #8b4513;
+}
+
+/* Update the float animation to work with ribbons */
+@keyframes float {
+    0%, 100% {
+        transform: rotate(45deg) translateY(0);
+    }
+    50% {
+        transform: rotate(45deg) translateY(-5px);
+    }
 }
 
 .tier-icon {
