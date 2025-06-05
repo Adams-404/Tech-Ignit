@@ -2338,6 +2338,66 @@ padding: 3rem 1rem;
     padding: 0 20px;
 }
 
+/* Coming Soon Gallery Styles */
+.coming-soon-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 400px;
+    padding: 2rem;
+    text-align: center;
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: 16px;
+    margin: 2rem 0;
+    border: 1px dashed rgba(255, 255, 255, 0.1);
+}
+
+.coming-soon-content {
+    max-width: 600px;
+    padding: 2rem;
+}
+
+.coming-soon-icon {
+    font-size: 4rem;
+    color: var(--primary);
+    margin-bottom: 1.5rem;
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+}
+
+.coming-soon-content h3 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: var(--primary);
+}
+
+.coming-soon-content p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 2rem;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.countdown {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--text);
+    background: rgba(255, 255, 255, 0.05);
+    padding: 1rem 2rem;
+    border-radius: 50px;
+    display: inline-block;
+}
+
+#gallery-countdown-timer {
+    color: var(--primary);
+    margin-left: 0.5rem;
+}
+
 .event-gallery h2 {
     text-align: center;
     margin-bottom: 15px;

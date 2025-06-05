@@ -106,9 +106,39 @@ document.addEventListener('DOMContentLoaded', function() {
         document.getElementById('seconds').textContent = String(seconds).padStart(2, '0');
     }
 
-    // Start the countdown timer
+    // Start the main countdown timer
     setInterval(updateCountdown, 1000);
     updateCountdown(); // Initial call
+    
+    // Gallery countdown timer
+    function updateGalleryCountdown() {
+        // Set the event start date: July 5th, 2025, 09:00 AM WAT (West Africa Time)
+        const eventDate = new Date('2025-07-05T09:00:00+01:00');
+        const now = new Date();
+        
+        // If event has already started, show a different message
+        if (now >= eventDate) {
+            document.getElementById('gallery-countdown').textContent = 'Event is happening now! Gallery coming soon.';
+            document.getElementById('gallery-countdown-timer').textContent = '';
+            return;
+        }
+        
+        const timeLeft = eventDate - now;
+        
+        // Calculate days, hours, minutes, seconds
+        const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
+        
+        // Update the countdown display
+        const countdownText = `${days}d ${hours}h ${minutes}m ${seconds}s`;
+        document.getElementById('gallery-countdown-timer').textContent = countdownText;
+    }
+    
+    // Start the gallery countdown timer
+    setInterval(updateGalleryCountdown, 1000);
+    updateGalleryCountdown(); // Initial call
 
     // Schedule Tabs
     const tabBtns = document.querySelectorAll('.tab-btn');
