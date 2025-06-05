@@ -4,7 +4,7 @@ Welcome to **Tech Ignit 2025**, A repository for the GDG on Campus GSU Community
 
 ## About Tech Ignit 2025
 
-**Tech Ignit 2025** is an exciting event hosted by the GDG on Campus GSU Community. Our goal is to create a platform for students, developers, and tech enthusiasts to learn, share, and grow in the ever-evolving world of technology.
+**Tech Ignit 2025** is a three days exciting event hosted by the GDG on Campus GSU Community. Our goal is to create a platform for students, developers, and tech enthusiasts to learn, share, and grow in the ever-evolving world of technology. Happening fro July 5th, 7th-8th.
 
 ### Event Highlights
 
@@ -15,7 +15,7 @@ Welcome to **Tech Ignit 2025**, A repository for the GDG on Campus GSU Community
 
 ## How to Participate
 
-1. **Register:** Visit our [official registration page](https://gdg.community.dev/events/details/google-gdg-on-campus-gombe-state-university-gombe-nigeria-presents-tech-ignite/) to secure your spot.
+1. **Register:** Visit our [official registration page](https://www.funzweb.com/events/tech-ignite-10-summit-175) to secure your spot.
 2. **Prepare:** Stay updated with our event schedule and pre-event resources.
 3. **Engage:** Join us for the sessions, workshops, and hackathon.
 
@@ -31,7 +31,7 @@ We appreciate the hard work and dedication of our team at GDG on campus GSU Comm
 
 Have questions or want to get involved? Reach out to us:
 
-- **Email:** [contact@gdgocgsu.com](mailto:gdggombestateuniversity@gmail.com)
+- **Email:** [gdggombestateuniversity@gmail.com](mailto:gdggombestateuniversity@gmail.com)
 - **Twitter:** [@GDGOCGSU](https://x.com/gdgocgsu?s=09)
 
 
