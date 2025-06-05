@@ -1,3 +1,37 @@
+// Main script for Tech Ignit 2025
+
+// Hamburger Menu Toggle
+function initHamburgerMenu() {
+    const hamburger = document.querySelector('.hamburger');
+    const navMenu = document.querySelector('.nav-menu');
+
+    if (!hamburger || !navMenu) return;
+
+    // Toggle menu on hamburger click
+    hamburger.addEventListener('click', (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        hamburger.classList.toggle('active');
+        navMenu.classList.toggle('active');
+    });
+
+    // Close menu when clicking outside
+    document.addEventListener('click', (e) => {
+        if (navMenu.classList.contains('active') && 
+            !navMenu.contains(e.target) && 
+            !hamburger.contains(e.target)) {
+            hamburger.classList.remove('active');
+            navMenu.classList.remove('active');
+        }
+    });
+
+    // Close menu when clicking a link
+    document.querySelectorAll('.nav-menu a').forEach(link => {
+        link.addEventListener('click', () => {
+            hamburger.classList.remove('active');
+            navMenu.classList.remove('active');
+        });
+    });
 // Hamburger Menu Animation - only run on index.html
 if (window.location.pathname.endsWith('index.html') || window.location.pathname.endsWith('/')) {
     const hamburger = document.querySelector('.hamburger');
@@ -28,8 +62,7 @@ if (window.location.pathname.endsWith('index.html') || window.location.pathname.
                 navMenu.classList.remove('active');
             });
         });
-    }
-}
+    }}
 
         // Debug: Log current time and timezone
         console.log('Current local time (browser):', new Date().toString());
@@ -261,18 +294,65 @@ if (window.location.pathname.endsWith('index.html') || window.location.pathname.
     scrollContainer.addEventListener('mouseleave', () => {
         scrollContent.style.animationPlayState = 'running';
     });
-});
 
+    // Initial animation start
+    scrollContent.style.animation = 'scroll 30s linear infinite';
 
-        // Initialize schedule
-        populateSchedule();
+    // Gallery Lightbox Functionality
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImage = document.getElementById('lightbox-image');
+    const lightboxVideo = document.getElementById('lightbox-video');
+    const lightboxTitle = document.getElementById('lightbox-title');
+    const lightboxDesc = document.getElementById('lightbox-desc');
+    const closeBtn = document.querySelector('.close-btn');
+    const downloadBtn = document.getElementById('downloadLightbox');
+    let currentItem = null;
 
-        // Day selector functionality
-        const dayButtons = document.querySelectorAll('.day-selector button');
-        dayButtons.forEach(button => {
-            button.addEventListener('click', () => {
-                dayButtons.forEach(btn => btn.classList.remove('active'));
-                button.classList.add('active');
-                // Here you would typically load different schedule data based on the selected day
+    // Open lightbox
+    function openLightbox(item) {
+        currentItem = item;
+        const type = item.getAttribute('data-type');
+        const src = item.getAttribute('data-src');
+        const title = item.querySelector('h3')?.textContent || '';
+        const desc = item.querySelector('p')?.textContent || '';
+
+        // Reset and hide both media types
+        lightboxImage.style.display = 'none';
+        lightboxVideo.style.display = 'none';
+        lightboxVideo.pause();
+
+        if (type === 'image') {
+            lightboxImage.src = src;
+            lightboxImage.alt = title;
+            lightboxImage.style.display = 'block';
+            downloadBtn.style.display = 'flex';
+        } else if (type === 'video') {
+            lightboxVideo.src = src;
+            lightboxVideo.poster = item.getAttribute('data-poster') || '';
+            lightboxVideo.style.display = 'block';
+            lightboxVideo.load();
+            downloadBtn.style.display = 'flex';
+        }
+
+        lightboxTitle.textContent = title;
+        lightboxDesc.textContent = desc;
+        lightbox.classList.add('active');
+        document.body.style.overflow = 'hidden';
+    }
+
+    // Close lightbox
+    function closeLightbox() {
+        lightbox.classList.remove('active');
+        document.body.style.overflow = '';
+        lightboxVideo.pause();
+    }
+
+    // Handle gallery item clicks
+    document.querySelectorAll('.gallery-item').forEach(item => {
+        item.addEventListener('click', (e) => {
+            // Don't trigger if clicking on buttons
+            if (!e.target.closest('button')) {
+                openLightbox(item);
+            }
             });
         });
